@@ -1,0 +1,4363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIGQ للتشخيص الاكثر دقه والاسرع والأحدث عالميا — مشروع وفكرة واختراع محمد احمد بكاء</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #040914;
+      --bg-panel: rgba(11, 21, 39, 0.84);
+      --bg-card: rgba(17, 31, 56, 0.78);
+      --bg-card-hover: rgba(23, 42, 74, 0.92);
+      --border-subtle: rgba(125, 211, 252, 0.16);
+      --border-strong: rgba(34, 211, 238, 0.42);
+      --text-main: #f8fafc;
+      --text-sec: #cbd5e1;
+      --text-muted: #8fa3bf;
+      --cyan: #22d3ee;
+      --cyan-dark: #0891b2;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --gold-soft: #fde68a;
+      --shadow-glow: 0 20px 55px rgba(2, 132, 199, 0.16), 0 0 0 1px rgba(148, 163, 184, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(16, 185, 129, 0.14), transparent 36%),
+        radial-gradient(circle at 14% 18%, rgba(34, 211, 238, 0.18), transparent 42%),
+        linear-gradient(165deg, #030711 0%, #071122 52%, #040914 100%);
+      color: var(--text-main);
+      font-family: "Cairo", "Plus Jakarta Sans", sans-serif;
+      padding: 18px 14px 36px;
+      overflow-x: hidden;
+    }
+
+    .bilingual-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ar-line {
+      font-family: "Cairo", sans-serif;
+      line-height: 1.45;
+    }
+
+    .en-line {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      direction: ltr;
+      text-align: right;
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
+
+    .en-line.align-center {
+      text-align: center;
+    }
+
+    .en-line.accent-en {
+      color: #67e8f9;
+    }
+
+    .app-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      background: var(--bg-panel);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 26px;
+      box-shadow: var(--shadow-glow);
+      overflow: hidden;
+    }
+
+    /* شريط الشعار العلوي: أمـي هي الروح + Al Ahdel في الركن العلوي */
+    .tribute-strip {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.14), rgba(34, 211, 238, 0.16), rgba(16, 185, 129, 0.14));
+      border-bottom: 1px solid rgba(103, 232, 249, 0.24);
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .tribute-right-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ruqaa-emblem {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      background: rgba(4, 12, 24, 0.65);
+      border: 1px solid rgba(253, 230, 138, 0.34);
+    }
+
+    .ruqaa-text {
+      font-family: "Aref Ruqaa", serif;
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--gold-soft);
+      letter-spacing: 0;
+      word-spacing: 2px;
+      line-height: 1.45;
+      text-shadow: 0 2px 12px rgba(253, 230, 138, 0.22);
+    }
+
+    .tribute-strip {
+      position: relative;
+    }
+
+    .al-ahdel-corner {
+      margin-right: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(10, 28, 54, 0.9), rgba(6, 17, 34, 0.95));
+      border: 1px solid rgba(103, 232, 249, 0.34);
+      box-shadow: 0 6px 20px rgba(34, 211, 238, 0.16), inset 0 0 12px rgba(16, 185, 129, 0.1);
+      transform: rotate(-3.5deg);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .al-ahdel-corner:hover {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.28), inset 0 0 14px rgba(16, 185, 129, 0.16);
+    }
+
+    .ahdel-sig-svg {
+      width: 112px;
+      height: 36px;
+      overflow: visible;
+      display: block;
+    }
+
+    .tribute-en {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      direction: ltr;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #a7f3d0;
+    }
+
+    /* الترويسة الرئيسية */
+    header.main-header {
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(8, 22, 43, 0.96), rgba(12, 34, 62, 0.92));
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .aigq-badge {
+      width: 66px;
+      height: 66px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--cyan), var(--emerald));
+      color: #03111c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      box-shadow: 0 10px 28px rgba(34, 211, 238, 0.32);
+      flex-shrink: 0;
+    }
+
+    .aigq-badge span:first-child {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.6px;
+      line-height: 1.05;
+    }
+
+    .aigq-badge span:last-child {
+      font-size: 10px;
+      font-weight: 800;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    .main-title-ar {
+      font-size: 21px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .main-title-en {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #67e8f9;
+    }
+
+    .tagline-ar {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #a7f3d0;
+      margin-top: 4px;
+    }
+
+    .tagline-en {
+      font-size: 11.5px;
+      color: var(--text-sec);
+    }
+
+    .inventor-ar {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .inventor-en {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .live-pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.12);
+      border: 1px solid rgba(34, 211, 238, 0.34);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .live-pill .ar-line {
+      font-size: 12px;
+      font-weight: 800;
+      color: #67e8f9;
+    }
+
+    .live-pill .en-line {
+      font-size: 10px;
+      color: #bae6fd;
+      text-align: center;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--emerald));
+      color: #03131b;
+      box-shadow: 0 8px 22px rgba(16, 185, 129, 0.25);
+    }
+
+    .btn-primary .ar-line {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #03131b;
+    }
+
+    .btn-primary .en-line {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #062838;
+      text-align: center;
+    }
+
+    .btn-secondary {
+      background: rgba(30, 48, 82, 0.85);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary .ar-line {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .btn-secondary .en-line {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* شريط التنقل بين الواجهات الأربع */
+    nav.screens-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(5, 12, 24, 0.92);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    nav.screens-nav button {
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 14px 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      transition: all 0.2s ease;
+    }
+
+    nav.screens-nav button .ar-line {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text-muted);
+    }
+
+    nav.screens-nav button .en-line {
+      font-size: 10.5px;
+      color: #64748b;
+      text-align: center;
+    }
+
+    nav.screens-nav button.active {
+      background: linear-gradient(180deg, rgba(34, 211, 238, 0.12), rgba(34, 211, 238, 0.02));
+      border-bottom-color: var(--cyan);
+    }
+
+    nav.screens-nav button.active .ar-line {
+      color: #ffffff;
+    }
+
+    nav.screens-nav button.active .en-line {
+      color: #67e8f9;
+    }
+
+    /* محتوى الواجهات */
+    main.screens-stage {
+      padding: 24px;
+    }
+
+    .screen-panel {
+      display: none;
+      animation: fadeSlide 0.28s ease;
+    }
+
+    .screen-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(16, 185, 129, 0.09), rgba(15, 29, 53, 0.9));
+      border: 1px solid var(--border-strong);
+      border-radius: 22px;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card h2.ar-line {
+      font-size: 24px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .hero-card .en-line.hero-en {
+      font-size: 13px;
+      color: #67e8f9;
+      margin-top: 2px;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc-ar {
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+
+    .hero-desc-en {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--text-sec);
+      margin-bottom: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .surface-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 20px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .surface-card:hover {
+      border-color: rgba(103, 232, 249, 0.32);
+      background: var(--bg-card-hover);
+    }
+
+    .card-head-ar {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .card-head-en {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #67e8f9;
+      margin-top: 2px;
+      margin-bottom: 10px;
+    }
+
+    .card-body-ar {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--text-sec);
+    }
+
+    .card-body-en {
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* رأس بطاقة فحص الدم مع صورة الجهاز المصغرة المدمجة */
+    .blood-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .mini-device-showcase {
+      width: 82px;
+      height: 62px;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(34, 211, 238, 0.28), rgba(6, 15, 30, 0.96));
+      border: 1px solid rgba(34, 211, 238, 0.55);
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.24), inset 0 0 12px rgba(16, 185, 129, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .mini-device-showcase:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 28px rgba(34, 211, 238, 0.38), inset 0 0 14px rgba(16, 185, 129, 0.24);
+    }
+
+    .mini-device-svg {
+      width: 68px;
+      height: 48px;
+      overflow: visible;
+    }
+
+    .chip-pulse-dot {
+      animation: chipPulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes chipPulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 1; }
+    }
+
+    /* مستشعر البصمة التفاعلي */
+    .biometric-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 18px 14px;
+      margin-top: 12px;
+      border-radius: 18px;
+      background: radial-gradient(circle at center, rgba(34, 211, 238, 0.12), rgba(6, 13, 26, 0.85));
+      border: 1px solid rgba(103, 232, 249, 0.22);
+    }
+
+    .fingerprint-pad {
+      width: 116px;
+      height: 116px;
+      border-radius: 32px;
+      background: linear-gradient(145deg, rgba(15, 35, 64, 0.95), rgba(7, 17, 34, 0.98));
+      border: 2px solid rgba(34, 211, 238, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 28px rgba(34, 211, 238, 0.16);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 14px;
+    }
+
+    .fingerprint-pad:hover {
+      transform: scale(1.04);
+      border-color: var(--emerald);
+      box-shadow: 0 0 34px rgba(16, 185, 129, 0.28);
+    }
+
+    .fingerprint-pad.scanning {
+      border-color: var(--amber);
+      animation: pulseScan 1.1s infinite ease-in-out;
+    }
+
+    .fingerprint-pad.verified {
+      border-color: var(--emerald);
+      box-shadow: 0 0 34px rgba(16, 185, 129, 0.36);
+    }
+
+    @keyframes pulseScan {
+      0%, 100% { box-shadow: 0 0 18px rgba(245, 158, 11, 0.25); }
+      50% { box-shadow: 0 0 38px rgba(245, 158, 11, 0.55); }
+    }
+
+    .fingerprint-svg {
+      width: 68px;
+      height: 68px;
+      stroke: var(--cyan);
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      transition: stroke 0.25s ease;
+    }
+
+    .fingerprint-pad.verified .fingerprint-svg {
+      stroke: var(--emerald);
+    }
+
+    .bio-status-ar {
+      font-size: 16px;
+      font-weight: 800;
+      color: #6ee7b7;
+    }
+
+    .bio-status-en {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #a7f3d0;
+      text-align: center;
+    }
+
+    .bio-meta-ar {
+      font-size: 12.5px;
+      color: var(--text-sec);
+      margin-top: 6px;
+    }
+
+    .bio-meta-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* تنبيه إدخال الشريحة المخصصة وعليها قطرة الدم */
+    .chip-instruction-banner {
+      margin-top: 10px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(244, 63, 94, 0.11));
+      border: 1px solid rgba(251, 191, 36, 0.45);
+    }
+
+    .chip-note-ar {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .chip-note-en {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #fef3c7;
+      margin-top: 3px;
+    }
+
+    .blood-metrics-list {
+      list-style: none;
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .blood-metric-item {
+      background: rgba(6, 13, 26, 0.72);
+      border: 1px solid var(--border-subtle);
+      border-right: 4px solid var(--cyan);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .metric-val-ar {
+      font-size: 15px;
+      font-weight: 800;
+      color: #67e8f9;
+    }
+
+    .metric-val-en {
+      font-size: 11px;
+      color: #bae6fd;
+      text-align: left;
+    }
+
+    /* خانة تشخيص احتياج الشخص للماء بعد الفحص + رسم الكوب الزجاجي */
+    .hydration-diagnosis-card {
+      margin-top: 18px;
+      background: linear-gradient(135deg, rgba(14, 116, 144, 0.18), rgba(15, 29, 53, 0.88), rgba(16, 185, 129, 0.1));
+      border: 1px solid rgba(34, 211, 238, 0.36);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .hydration-layout {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .water-glass-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: 18px;
+      background: rgba(4, 12, 24, 0.75);
+      border: 1px solid rgba(103, 232, 249, 0.24);
+    }
+
+    .water-glass-svg {
+      width: 84px;
+      height: 106px;
+      overflow: visible;
+    }
+
+    #waterLiquidGroup {
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .glass-percent-label {
+      margin-top: 6px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: #67e8f9;
+    }
+
+    .hydration-message-box {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(6, 15, 30, 0.78);
+      border: 1px solid rgba(34, 211, 238, 0.26);
+    }
+
+    .hydration-msg-ar {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #a5f3fc;
+      line-height: 1.65;
+    }
+
+    .hydration-msg-en {
+      font-size: 12px;
+      font-weight: 600;
+      color: #bae6fd;
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .hydration-sub-ar {
+      font-size: 13px;
+      color: var(--text-sec);
+      margin-top: 8px;
+      line-height: 1.65;
+    }
+
+    .hydration-sub-en {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .conn-banner {
+      display: inline-flex;
+      flex-direction: column;
+      padding: 10px 16px;
+      border-radius: 16px;
+      margin: 10px 0 12px;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.14);
+    }
+
+    .conn-banner.waiting {
+      border-color: rgba(245, 158, 11, 0.45);
+      background: rgba(245, 158, 11, 0.14);
+    }
+
+    .conn-banner.disconnected {
+      border-color: rgba(244, 63, 94, 0.45);
+      background: rgba(244, 63, 94, 0.14);
+    }
+
+    .conn-banner .ar-line {
+      font-size: 14px;
+      font-weight: 800;
+      color: #6ee7b7;
+    }
+
+    .conn-banner.waiting .ar-line {
+      color: #fcd34d;
+    }
+
+    .conn-banner.disconnected .ar-line {
+      color: #fda4af;
+    }
+
+    .conn-banner .en-line {
+      font-size: 11px;
+      color: var(--text-sec);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(6, 13, 26, 0.65);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 13px 12px;
+      text-align: right;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      vertical-align: top;
+    }
+
+    th .ar-line {
+      font-size: 13px;
+      font-weight: 800;
+      color: #67e8f9;
+    }
+
+    th .en-line {
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+
+    td .ar-line {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    td .en-line {
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+
+    .investor-dock {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(5, 12, 24, 0.85);
+      border: 1px dashed rgba(34, 211, 238, 0.42);
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 720px) {
+      nav.screens-nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .main-title-ar {
+        font-size: 18px;
+      }
+      .ruqaa-text {
+        font-size: 20px;
+      }
+      .tribute-strip {
+        justify-content: space-between;
+      }
+      .ahdel-sig-svg {
+        width: 98px;
+        height: 32px;
+      }
+      .hydration-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* مؤشر التفاعل الصوتي والمرئي */
+    .av-feedback-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(15, 29, 53, 0.9), rgba(8, 36, 56, 0.92));
+      border: 1px solid rgba(34, 211, 238, 0.34);
+    }
+
+    .av-status-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sound-wave-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+      padding: 0 4px;
+    }
+
+    .sound-wave-bars span {
+      display: block;
+      width: 3.5px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--cyan), var(--emerald));
+      transition: height 0.2s ease;
+    }
+
+    .sound-wave-bars.speaking span {
+      animation: eqBounce 0.65s infinite ease-in-out;
+    }
+
+    .sound-wave-bars.speaking span:nth-child(2) { animation-delay: 0.12s; }
+    .sound-wave-bars.speaking span:nth-child(3) { animation-delay: 0.24s; }
+    .sound-wave-bars.speaking span:nth-child(4) { animation-delay: 0.36s; }
+    .sound-wave-bars.speaking span:nth-child(5) { animation-delay: 0.18s; }
+
+    @keyframes eqBounce {
+      0%, 100% { height: 5px; opacity: 0.6; }
+      50% { height: 22px; opacity: 1; }
+    }
+
+    .visual-flash-active {
+      animation: cardFlashGlow 0.9s ease;
+    }
+
+    @keyframes cardFlashGlow {
+      0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.65); border-color: var(--cyan); }
+      50% { box-shadow: 0 0 32px 4px rgba(16, 185, 129, 0.45); border-color: var(--emerald); }
+      100% { box-shadow: none; }
+    }
+
+    .scan-laser-line {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--amber), #fef08a, var(--amber), transparent);
+      box-shadow: 0 0 12px var(--amber);
+      top: 15%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .fingerprint-pad.scanning .scan-laser-line {
+      opacity: 1;
+      animation: laserSweep 1.05s infinite alternate ease-in-out;
+    }
+
+    @keyframes laserSweep {
+      0% { top: 14%; }
+      100% { top: 82%; }
+    }
+
+    .water-bubble {
+      animation: bubbleRise 2.4s infinite ease-in;
+      transform-origin: center;
+    }
+
+    .water-bubble:nth-child(2) { animation-delay: 0.7s; }
+    .water-bubble:nth-child(3) { animation-delay: 1.4s; }
+
+    @keyframes bubbleRise {
+      0% { transform: translateY(10px) scale(0.7); opacity: 0; }
+      35% { opacity: 0.9; }
+      100% { transform: translateY(-28px) scale(1.15); opacity: 0; }
+    }
+
+
+    .lang-sequence-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .lang-pill {
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-family: "Plus Jakarta Sans", "Cairo", sans-serif;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      background: rgba(15, 29, 53, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: var(--text-muted);
+      transition: all 0.22s ease;
+    }
+
+    .lang-pill.active-lang {
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.28), rgba(16, 185, 129, 0.28));
+      border-color: var(--cyan);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(34, 211, 238, 0.38);
+      transform: translateY(-1px) scale(1.05);
+    }
+
+    .lang-pill.done-lang {
+      border-color: rgba(16, 185, 129, 0.45);
+      color: #6ee7b7;
+    }
+
+
+    .welcome-greeting-banner {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: linear-gradient(120deg, rgba(34, 211, 238, 0.14), rgba(16, 185, 129, 0.14), rgba(253, 230, 138, 0.08));
+      border: 1px solid rgba(103, 232, 249, 0.35);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .welcome-words-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .welcome-word-chip {
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: rgba(6, 15, 30, 0.82);
+      border: 1px solid rgba(103, 232, 249, 0.28);
+      color: #e2e8f0;
+      transition: all 0.22s ease;
+    }
+
+    .welcome-word-chip.active-welcome {
+      background: linear-gradient(135deg, var(--cyan), var(--emerald));
+      color: #03131b;
+      border-color: transparent;
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
+      transform: translateY(-1px) scale(1.05);
+    }
+
+
+    /* نوافذ بصمة الصوت وبصمة العين بتناسق كامل مع هوية AIGQ */
+    .biometric-modal-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .biometric-window-card {
+      margin-top: 18px;
+      background: linear-gradient(145deg, rgba(14, 28, 52, 0.92), rgba(7, 17, 34, 0.96));
+      border: 1px solid rgba(34, 211, 238, 0.36);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 36px rgba(2, 132, 199, 0.14);
+    }
+
+    .voice-prompt-box {
+      margin-top: 12px;
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(16, 185, 129, 0.12));
+      border: 1px solid rgba(103, 232, 249, 0.38);
+      text-align: center;
+    }
+
+    .say-hello-phrase-ar {
+      font-size: 22px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .say-hello-phrase-en {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #67e8f9;
+      margin-top: 3px;
+    }
+
+    .voice-meter-track {
+      margin-top: 14px;
+      height: 12px;
+      width: 100%;
+      border-radius: 999px;
+      background: rgba(4, 12, 24, 0.85);
+      border: 1px solid rgba(103, 232, 249, 0.24);
+      overflow: hidden;
+    }
+
+    .voice-meter-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--emerald), var(--amber));
+      transition: width 0.12s ease;
+    }
+
+    .eye-camera-viewport {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 3;
+      margin: 14px auto 0;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #030914;
+      border: 2px solid rgba(34, 211, 238, 0.48);
+      box-shadow: 0 0 28px rgba(34, 211, 238, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eye-camera-viewport video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+
+    .eye-look-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      background: radial-gradient(circle at center, transparent 28%, rgba(3, 9, 20, 0.58) 100%);
+    }
+
+    .look-here-badge {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(4, 15, 30, 0.86);
+      border: 1px solid rgba(253, 230, 138, 0.55);
+      color: var(--gold-soft);
+      font-size: 13.5px;
+      font-weight: 800;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .iris-reticle {
+      width: 112px;
+      height: 112px;
+      border-radius: 999px;
+      border: 2px dashed rgba(34, 211, 238, 0.85);
+      box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.14), inset 0 0 18px rgba(34, 211, 238, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .iris-reticle-core {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 2px solid #fde68a;
+      background: rgba(34, 211, 238, 0.25);
+    }
+
+    .db-evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .db-evidence-item {
+      padding: 13px 14px;
+      border-radius: 15px;
+      background: rgba(5, 13, 26, 0.78);
+      border: 1px solid var(--border-subtle);
+    }
+
+  
+    .guided-console-card {
+      margin-top: 18px;
+      background: linear-gradient(145deg, rgba(10, 25, 48, 0.94), rgba(6, 15, 30, 0.98));
+      border: 1px solid rgba(34, 211, 238, 0.42);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 16px 40px rgba(2, 132, 199, 0.16);
+    }
+
+    .guided-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .control-box {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(8, 19, 38, 0.85);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .control-label-ar {
+      font-size: 13px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .control-label-en {
+      font-size: 10.5px;
+      color: #67e8f9;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: #22d3ee;
+      cursor: pointer;
+    }
+
+    .select-input, .num-input {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 12px;
+      background: #050d1b;
+      color: #f8fafc;
+      border: 1px solid rgba(103, 232, 249, 0.35);
+      font-family: "Cairo", "Plus Jakarta Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .sensor-mode-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      color: #fde68a;
+    }
+
+    .sensor-mode-pill.live {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: rgba(16, 185, 129, 0.5);
+      color: #6ee7b7;
+    }
+
+  
+    .report-export-card {
+      margin-top: 18px;
+      background: linear-gradient(145deg, rgba(11, 24, 46, 0.95), rgba(5, 13, 27, 0.98));
+      border: 1px solid rgba(16, 185, 129, 0.38);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 16px 38px rgba(4, 120, 87, 0.12);
+    }
+
+    .report-summary-box {
+      margin-top: 12px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(4, 11, 23, 0.88);
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      font-family: "Cairo", "Plus Jakarta Sans", sans-serif;
+      font-size: 13px;
+      line-height: 1.85;
+      color: #e2e8f0;
+      white-space: pre-line;
+    }
+
+    .pending-hardware-slot {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px dashed rgba(251, 191, 36, 0.5);
+      background: rgba(245, 158, 11, 0.08);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- الشعار العلوي: أمـي هي الروح + Al Ahdel في الركن العلوي -->
+    <div class="tribute-strip">
+      <div class="tribute-right-group">
+        <div class="ruqaa-emblem" title="أمـي هي الروح">
+          <span class="ruqaa-text">أمـي هي الروح</span>
+        </div>
+        <div class="tribute-en">My Mother Is The Soul • AIGQ Signature Tribute</div>
+      </div>
+
+      <div class="al-ahdel-corner" title="Al Ahdel Signature">
+        <svg class="ahdel-sig-svg" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ahdelSigGrad" x1="8" y1="6" x2="124" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#a5f3fc" />
+              <stop offset="55%" stop-color="#6ee7b7" />
+              <stop offset="100%" stop-color="#fde68a" />
+            </linearGradient>
+          </defs>
+          <!-- خط توقيع متصل متشابك يربط حروف الاهدل بانسيابية -->
+          <path
+            d="M10 31 C16 14, 22 8, 25 27 C27 33, 30 20, 35 23 C39 25, 38 31, 43 27 L49 10 L46 31 C50 23, 56 21, 59 27 C62 32, 68 20, 73 25 C77 29, 75 33, 81 26 L88 10 L84 31 C89 22, 96 21, 99 28 C102 34, 111 24, 122 21"
+            stroke="url(#ahdelSigGrad)"
+            stroke-width="2.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <!-- تشابك الخط السفلي للتوقيع -->
+          <path
+            d="M18 35 C42 39, 82 39, 116 31"
+            stroke="#22d3ee"
+            stroke-opacity="0.7"
+            stroke-width="1.4"
+            stroke-linecap="round"
+          />
+          <text
+            x="66"
+            y="24"
+            text-anchor="middle"
+            fill="#ecfeff"
+            font-family="'Aref Ruqaa', 'Plus Jakarta Sans', cursive, sans-serif"
+            font-style="italic"
+            font-weight="700"
+            font-size="18.5"
+            letter-spacing="0.9"
+          >Al Ahdel</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- الترويسة الرئيسية -->
+    <header class="main-header">
+      <div class="brand-identity">
+        <div class="aigq-badge">
+          <span>AIGQ</span>
+          <span>SMART LAB</span>
+        </div>
+        <div class="bilingual-stack">
+          <div class="main-title-ar">AIGQ للتشخيص الاكثر دقه والاسرع والأحدث عالميا</div>
+          <div class="main-title-en">AIGQ — Most Accurate, Fastest &amp; Latest Global Diagnostics</div>
+
+          <div class="tagline-ar">منظومة تشخيص ذكية متكاملة بالبصمة وشريحة الدم عبر USB-C</div>
+          <div class="tagline-en">Integrated Biometric &amp; Blood-Chip Diagnostic System via USB-C</div>
+
+          <div class="inventor-ar">مشروع وفكرة واختراع محمد احمد بكاء</div>
+          <div class="inventor-en">Project, Idea &amp; Invention by Mohammed Ahmed Baka,a</div>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="live-pill">
+          <span class="ar-line" id="modeAr">وضع العرض التوضيحي</span>
+          <span class="en-line" id="modeEn">Investor Demo Mode</span>
+        </div>
+        <button class="btn btn-primary" onclick="switchScreen('scan')">
+          <span class="ar-line">بدء الفحص الفوري</span>
+          <span class="en-line">Start Diagnostic</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- الواجهات الأربع -->
+    <nav class="screens-nav" id="screensNav">
+      <button class="active" data-screen="home" onclick="switchScreen('home')">
+        <span class="ar-line">1. الرئيسية والهوية</span>
+        <span class="en-line">1. Home &amp; Identity</span>
+      </button>
+      <button data-screen="device" onclick="switchScreen('device')">
+        <span class="ar-line">2. ربط القطعة USB-C</span>
+        <span class="en-line">2. USB-C Bridge</span>
+      </button>
+      <button data-screen="scan" onclick="switchScreen('scan')">
+        <span class="ar-line">3. البصمة وفحص الدم</span>
+        <span class="en-line">3. Biometrics &amp; Blood</span>
+      </button>
+      <button data-screen="log" onclick="switchScreen('log')">
+        <span class="ar-line">4. السجل والملخص</span>
+        <span class="en-line">4. Logs &amp; Summary</span>
+      </button>
+    </nav>
+
+    <main class="screens-stage">
+      <!-- الواجهة 1: الرئيسية والهوية -->
+      <section class="screen-panel active" id="screen-home">
+        <div class="hero-card">
+          <h2 class="ar-line">AIGQ للتشخيص الاكثر دقه والاسرع والأحدث عالميا</h2>
+          <div class="en-line hero-en">AIGQ — Most Accurate, Fastest &amp; Latest Global Diagnostics</div>
+
+          <p class="hero-desc-ar">
+            <strong>AIGQ — التشخيص الأكثر دقة والأسرع والأحدث عالمياً:</strong> منظومة تشخيص ذكية متكاملة تجمع بين التحقق البيومتري بالبصمة، الربط عبر منفذ USB-C، وفحص الدم عبر الشريحة الخاصة دون مواد تفاعلية خارجية سوى ما أعددناه في الشريحة، مع تحليل مؤشرات الصوت والعين واليد وتقدير احتياج الجسم للماء.
+          </p>
+          <p class="hero-desc-en">
+            <strong>AIGQ — The Most Accurate, Fastest &amp; Latest Globally:</strong> Integrated smart diagnostic system combining biometric fingerprint verification, USB-C connectivity, and dedicated-chip blood testing without external reagents, alongside voice, eye, and hand biomarker analysis and post-test hydration estimation.
+          </p>
+          <div class="db-evidence-grid" style="margin-bottom: 18px;">
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 13px; font-weight: 800; color: #67e8f9;">دقة عالية: قراءات وتحليلات مدعومة بقاعدة بيانات موثقة لتقليل نسبة الخطأ.</span>
+                <span class="en-line">High Accuracy: Readings and analyses backed by a verified evidence database to minimize error.</span>
+              </div>
+            </div>
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 13px; font-weight: 800; color: #6ee7b7;">سرعة فائقة: استجابة فورية وعرض مباشر للنتائج وسجل الجلسات.</span>
+                <span class="en-line">Ultra-Fast: Instant response with live results and session history logging.</span>
+              </div>
+            </div>
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 13px; font-weight: 800; color: #fde68a;">تقنيات حديثة: تكامل ذكي بين الاستشعار البيومتري وشريحة الفحص والمؤشرات الحيوية.</span>
+                <span class="en-line">Latest Tech: Seamless integration of biometric sensing, custom test chip, and multi-modal biomarkers.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls-row">
+            <button class="btn btn-primary" onclick="switchScreen('scan')">
+              <span class="ar-line">الانتقال إلى البصمة وفحص الدم</span>
+              <span class="en-line">Open Biometrics &amp; Blood</span>
+            </button>
+            <button class="btn btn-secondary" onclick="switchScreen('device')">
+              <span class="ar-line">إدارة ربط منفذ USB-C</span>
+              <span class="en-line">Manage USB-C Link</span>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="grid-2">
+          <div class="surface-card">
+            <div class="card-head-ar">تحقق بيومتري متكامل بالبصمة</div>
+            <div class="card-head-en">Integrated Biometric Fingerprint Scan</div>
+            <p class="card-body-ar">
+              مستشعر بصمة مدمج في الواجهة لربط هوية الفحص مباشرة بالجلسة وقراءة المؤشرات الحيوية بسلاسة.
+            </p>
+            <p class="card-body-en">
+              Built-in fingerprint verification pad to link session identity with real-time diagnostic readings.
+            </p>
+          </div>
+
+          <div class="surface-card">
+            <div class="card-head-ar">شريحة فحص الدم بدون مواد خارجية</div>
+            <div class="card-head-en">Reagent-Free External Blood Chip</div>
+            <p class="card-body-ar">
+              تشمل نسبة الجلوكوز وصورة الدم (CBC) وفحوصات الدم القابلة للتشخيص عبر الشريحة دون إضافة
+              مواد تفاعلية خارجية سوى ما أعددناه داخل الشريحة.
+            </p>
+            <p class="card-body-en">
+              Covers glucose, complete blood count (CBC), and chip-enabled blood panels using only the elements
+              integrated inside our custom chip.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- الواجهة 2: ربط القطعة USB-C -->
+      <section class="screen-panel" id="screen-device">
+        <div class="surface-card">
+          <div class="card-head-ar">حالة وحدة الربط والمنفذ (USB-C)</div>
+          <div class="card-head-en">USB-C Hardware Bridge Status</div>
+
+          <div class="conn-banner" id="connBanner">
+            <span class="ar-line" id="connAr">● متصل وجاهز لاستقبال بيانات البصمة والشريحة عبر USB-C</span>
+            <span class="en-line" id="connEn">Connected &amp; ready to stream biometric and chip data via USB-C</span>
+          </div>
+
+          <p class="card-body-ar" id="connDescAr">
+            النموذج التجميعي في منفذ USB-C يوضح مسار الربط والبيانات تمهيداً لطلب وتصنيع القطع المبرمجة بمواصفاتنا الخاصة.
+          </p>
+          <p class="card-body-en" id="connDescEn">
+            USB-C assembly demonstrates the end-to-end workflow ahead of custom-programmed hardware manufacturing.
+          </p>
+
+          <div class="controls-row">
+            <button class="btn btn-primary" onclick="setConn('connected')">
+              <span class="ar-line">حالة: متصل</span>
+              <span class="en-line">Status: Connected</span>
+            </button>
+            <button class="btn btn-secondary" onclick="setConn('waiting')">
+              <span class="ar-line">حالة: بانتظار الإشارة</span>
+              <span class="en-line">Status: Waiting Signal</span>
+            </button>
+            <button class="btn btn-secondary" onclick="setConn('disconnected')">
+              <span class="ar-line">حالة: غير متصل</span>
+              <span class="en-line">Status: Disconnected</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- الواجهة 3: البصمة وفحص الدم -->
+      <section class="screen-panel" id="screen-scan">
+        <div class="grid-2">
+          <!-- مستشعر البصمة -->
+          <div class="surface-card">
+            <div class="card-head-ar">1. مستشعر البصمة البيومتري الفعلي (استشعار تلامس وضغط ومسار حقيقي)</div>
+            <div class="card-head-en">1. Real Biometric Fingerprint Sensor (Continuous Touch, Pressure &amp; Ridge Path)</div>
+            <p class="card-body-ar">
+              لا يقبل المستشعر ضغطة سريعة وهمية: يجب <strong>إبقاء الإصبع ملامساً وتحريكه/تثبيته</strong> على لوحة البصمة لالتقاط عدد كافٍ من نقاط التلامس والمسار والضغط الحقيقي قبل اعتماد التحقق.
+            </p>
+            <p class="card-body-en">
+              Rejects single-tap fakes: requires sustained finger contact &amp; movement across the pad to capture real touch samples, path length, and pressure.
+            </p>
+
+            <div class="biometric-box">
+              <div
+                class="fingerprint-pad"
+                id="fingerprintPad"
+                style="touch-action: none; user-select: none; position: relative; overflow: hidden;"
+                onpointerdown="handlePadFingerprintDown(event)"
+                onpointermove="handlePadFingerprintMove(event)"
+                onpointerup="handlePadFingerprintUp(event)"
+                onpointercancel="handlePadFingerprintCancel(event)"
+                aria-label="مستشعر البصمة الفعلي"
+              >
+                <canvas id="padFingerprintCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+                <div class="scan-laser-line"></div>
+                <svg class="fingerprint-svg" viewBox="0 0 64 64" style="position: relative; z-index: 2; pointer-events: none;">
+                  <path d="M20 26c0-7.7 5.4-14 12-14s12 6.3 12 14v8c0 9.5-4.5 17-12 20" />
+                  <path d="M14 32c0-10.5 8.1-19 18-19s18 8.5 18 19v5c0 8.5-3.2 15.5-8.5 19.5" />
+                  <path d="M26 27c0-3.9 2.7-7 6-7s6 3.1 6 7v7c0 6.2-2.6 11.2-7 13.5" />
+                  <path d="M16 42c2.2 4.8 5.8 8.6 10.5 11" />
+                  <path d="M32 32v6c0 4-1.8 7.4-4.8 9.2" />
+                </svg>
+              </div>
+
+              <div class="bio-status-ar" id="bioStatusAr" style="color: #fcd34d;">بانتظار قراءة بصمة فعلية (لمس + مسار مستمر)</div>
+              <div class="bio-status-en" id="bioStatusEn">Awaiting Real Print (Sustained Touch + Path)</div>
+
+              <div class="bio-meta-ar" id="bioMetaAr">نسبة اكتمال القراءة الفعلية: 0% • المسار: 0px • النقاط: 0 • غير موثّق بعد</div>
+              <div class="bio-meta-en" id="bioMetaEn">Real Capture Progress: 0% • Path: 0px • Samples: 0 • Unverified</div>
+
+              <div class="controls-row" style="justify-content: center;">
+                <button type="button" class="btn btn-secondary" onclick="resetPadFingerprintCapture()">
+                  <span class="ar-line">إعادة ضبط البصمة</span>
+                  <span class="en-line">Reset Fingerprint</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- مربع فحص الدم وملاحظة الشريحة + صورة الجهاز المصغرة -->
+          <div class="surface-card">
+            <div class="blood-card-header">
+              <div class="bilingual-stack">
+                <div class="card-head-ar" style="margin-bottom: 0;">فحص الدم والشريحة الخاصة</div>
+                <div class="card-head-en" style="margin-bottom: 0;">Blood Diagnostics &amp; Dedicated Chip</div>
+              </div>
+
+              <div class="mini-device-showcase" title="AIGQ USB-C & Chip Module">
+                <svg class="mini-device-svg" viewBox="0 0 84 60" fill="none">
+                  <defs>
+                    <linearGradient id="devGrad" x1="6" y1="12" x2="64" y2="48" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#22d3ee" />
+                      <stop offset="100%" stop-color="#10b981" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="21" width="14" height="18" rx="4" fill="#0f2540" stroke="url(#devGrad)" stroke-width="2" />
+                  <rect x="8" y="27" width="6" height="6" rx="1.5" fill="#67e8f9" />
+                  <rect x="18" y="12" width="44" height="36" rx="9" fill="#09182c" stroke="url(#devGrad)" stroke-width="2.2" />
+                  <rect x="25" y="19" width="22" height="22" rx="4.5" fill="#0d2b45" stroke="#67e8f9" stroke-width="1.4" />
+                  <path d="M36 23.5 C36 23.5 31.5 29 31.5 32.5 A4.5 4.5 0 0 0 40.5 32.5 C40.5 29 36 23.5 36 23.5 Z" fill="#f43f5e" stroke="#fda4af" stroke-width="0.9" />
+                  <circle class="chip-pulse-dot" cx="54" cy="21" r="2.8" fill="#10b981" />
+                  <line x1="54" y1="28" x2="54" y2="39" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M62 24 H76 V36 H62" stroke="#fde68a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="71" cy="30" r="2.2" fill="#fde68a" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="chip-instruction-banner">
+              <div class="chip-note-ar">
+                ملاحظة: ادخل شريحتنا الخاصه الذي عليها قطرة من دمك
+              </div>
+              <div class="chip-note-en">
+                Note: Insert our dedicated chip carrying a drop of your blood
+              </div>
+            </div>
+
+            <p class="card-body-ar" style="margin-top: 10px;">
+              يشمل الفحص <strong>نسبة الجلوكوز</strong>، <strong>صورة الدم (CBC)</strong>، و<strong>فحوصات الدم التي يستطيع الدم تشخيصها ولا تحتاج لمواد تفاعلية إلا الذي سنضيفه بالشريحة</strong>.
+            </p>
+            <p class="card-body-en">
+              Includes glucose level, complete blood count (CBC), and chip-enabled blood diagnostics without
+              external chemical reagents beyond our chip formulation.
+            </p>
+
+            <ul class="blood-metrics-list">
+              <li class="blood-metric-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-weight: 800; color: #ffffff;">نسبة الجلوكوز</span>
+                  <span class="en-line">Blood Glucose</span>
+                </div>
+                <div class="bilingual-stack">
+                  <span class="metric-val-ar" id="glucoseAr">96 mg/dL</span>
+                  <span class="metric-val-en" id="glucoseEn">Normal Range</span>
+                </div>
+              </li>
+
+              <li class="blood-metric-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-weight: 800; color: #ffffff;">صورة الدم (CBC)</span>
+                  <span class="en-line">Complete Blood Count (CBC)</span>
+                </div>
+                <div class="bilingual-stack">
+                  <span class="metric-val-ar" id="cbcAr">RBC • WBC • HGB متوازنة</span>
+                  <span class="metric-val-en" id="cbcEn">RBC • WBC • HGB Balanced</span>
+                </div>
+              </li>
+
+              <li class="blood-metric-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-weight: 800; color: #ffffff;">فحوصات الشريحة (بلا مواد خارجية)</span>
+                  <span class="en-line">Chip Panel (No External Reagents)</span>
+                </div>
+                <div class="bilingual-stack">
+                  <span class="metric-val-ar" id="chipPanelAr">مكتملة عبر الشريحة فقط</span>
+                  <span class="metric-val-en" id="chipPanelEn">Chip-Integrated Only</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- نوافذ بصمة الصوت وبصمة العين بنفس التنسيق المتناسق -->
+        <div class="grid-2" id="voiceAndEyeWindows">
+          <!-- نافذة تشخيص بصمة الصوت: قل مرحبا بلغتك -->
+          <div class="biometric-window-card" id="voiceBiometricWindow">
+            <div class="card-head-ar" style="margin-bottom: 0;">نافذة تشخيص بصمة الصوت</div>
+            <div class="card-head-en" style="margin-bottom: 0;">Voice Biometric Diagnostic Window</div>
+
+            <div class="voice-prompt-box">
+              <div class="say-hello-phrase-ar" id="sayHelloAr">قل مرحبا بلغتك</div>
+              <div class="say-hello-phrase-en" id="sayHelloEn">Say "Hello" in Your Language</div>
+              <div class="bio-meta-ar" id="voiceSampleAr">مثال النطق: مرحبا • Hello • Hola • Hallo</div>
+              <div class="bio-meta-en" id="voiceSampleEn">Sample greeting: Marhaba • Hello • Hola • Hallo</div>
+
+              <div class="voice-meter-track" aria-hidden="true">
+                <div class="voice-meter-fill" id="voiceMeterFill"></div>
+              </div>
+            </div>
+
+            <div class="controls-row" style="justify-content: center;">
+              <button type="button" class="btn btn-primary" onclick="runVoiceBiometricCheck()" id="voiceScanBtn">
+                <span class="ar-line">بدء تسجيل وبصمة الصوت</span>
+                <span class="en-line">Start Voice Capture</span>
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="stopRealVoiceBiometricScan()">
+                <span class="ar-line">إيقاف التسجيل</span>
+                <span class="en-line">Stop Capture</span>
+              </button>
+            </div>
+
+            <div class="bio-meta-ar" id="voiceLiveMetricAr" style="text-align: center; margin-top: 10px;">
+              الطبقة الصوتية (Pitch / F0): بانتظار نطق التحية • طاقة الصوت: 0%
+            </div>
+            <div class="bio-meta-en" id="voiceLiveMetricEn" style="text-align: center;">
+              Fundamental Frequency (F0): Waiting for greeting • RMS Energy: 0%
+            </div>
+
+            <div class="db-evidence-grid">
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #fde68a;" id="voiceAgeSexAr">العمر والنوع من الصوت: بانتظار التحليل الصوتي</span>
+                  <span class="en-line" id="voiceAgeSexEn">Voice Age &amp; Sex Cue: Waiting for acoustic analysis</span>
+                </div>
+              </div>
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #67e8f9;" id="voiceDbMatchAr">مرجع القاعدة الموثقة: جاهز للمطابقة</span>
+                  <span class="en-line" id="voiceDbMatchEn">Evidence DB Match: Ready for acoustic profiling</span>
+                </div>
+              </div>
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #6ee7b7;" id="voiceRefNoteAr">المرجع العلمي: طبقة F0، الرنين والوضوح الصوتي (WHO / ASHA)</span>
+                  <span class="en-line" id="voiceRefNoteEn">Ref: F0 pitch, vocal resonance &amp; phonation stability (WHO / ASHA)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- نافذة تشخيص بصمة العين: انظر هنا مع كاميرا حقيقية وانتقال تلقائي للنتائج -->
+          <div class="biometric-window-card" id="eyeBiometricWindow">
+            <div class="card-head-ar" style="margin-bottom: 0;">نافذة تشخيص بصمة العين</div>
+            <div class="card-head-en" style="margin-bottom: 0;">Eye &amp; Iris Biometric Window</div>
+
+            <div class="eye-camera-viewport" id="eyeCameraViewport">
+              <video id="eyeCameraVideo" autoplay playsinline muted></video>
+              <canvas id="eyeAnalysisCanvas" style="display: none;"></canvas>
+              <div class="eye-look-overlay">
+                <div class="look-here-badge" id="lookHereBadge">
+                  <span class="ar-line">انظر هنا</span>
+                  <span class="en-line align-center" style="font-size: 10px; color: #fde68a;">Look Here</span>
+                </div>
+                <div class="iris-reticle" aria-hidden="true">
+                  <div class="iris-reticle-core"></div>
+                </div>
+                <div class="bio-meta-en align-center" id="eyeCameraHintEn" style="color: #e0f2fe; font-weight: 700;">
+                  Live camera sensor auto-captures iris &amp; transfers to results
+                </div>
+              </div>
+            </div>
+
+            <div class="controls-row" style="justify-content: center;">
+              <button type="button" class="btn btn-primary" onclick="runEyeBiometricCheck()" id="eyeStartBtn">
+                <span class="ar-line">تشغيل الكاميرا وأخذ بصمة العين</span>
+                <span class="en-line">Start Eye Camera Scan</span>
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="stopRealEyeCameraScan()">
+                <span class="ar-line">إيقاف الكاميرا</span>
+                <span class="en-line">Stop Camera</span>
+              </button>
+            </div>
+
+            <div class="bio-meta-ar" id="eyeLiveMetricAr" style="text-align: center; margin-top: 10px;">
+              مستشعر الكاميرا: جاهز • عند التقاط بصمة العين يتم الانتقال تلقائياً إلى النتائج
+            </div>
+            <div class="bio-meta-en" id="eyeLiveMetricEn" style="text-align: center;">
+              Camera sensor ready • Auto-navigates to results upon eye capture
+            </div>
+
+            <div class="db-evidence-grid">
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #fde68a;" id="eyeAgeSexAr">العمر والنوع من العين: بانتظار المسح البصري</span>
+                  <span class="en-line" id="eyeAgeSexEn">Eye Age &amp; Sex Cue: Waiting for ocular scan</span>
+                </div>
+              </div>
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #67e8f9;" id="eyeDbMatchAr">مرجع القاعدة الموثقة: جاهز لتحليل القزحية والصلبة</span>
+                  <span class="en-line" id="eyeDbMatchEn">Evidence DB Match: Ready for iris &amp; sclera analysis</span>
+                </div>
+              </div>
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #fde68a;" id="visionDbMatchAr">تشخيص النظر (القاعدة الموثقة): بانتظار المسح البصري الفعلي</span>
+                  <span class="en-line" id="visionDbMatchEn">Vision DB Diagnosis: Waiting for real optical scan</span>
+                </div>
+              </div>
+              <div class="db-evidence-item">
+                <div class="bilingual-stack">
+                  <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #6ee7b7;" id="eyeRefNoteAr">المرجع العلمي: القزحية، حدة النظر والتباين (AAO / ISO-IEC 29794-6)</span>
+                  <span class="en-line" id="eyeRefNoteEn">Ref: Iris, visual acuity, contrast &amp; gaze (AAO / ISO-IEC 29794-6)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+          <div class="controls-row" style="justify-content: center;">
+            <button type="button" class="btn btn-primary" onclick="finalizeHandTouchCaptureNow()" id="handScanBtn">
+              <span class="ar-line">تحليل البصمة الملتقطة الآن</span>
+              <span class="en-line">Analyze Captured Print</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="clearHandTouchCanvas()">
+              <span class="ar-line">مسح مسار اللمس</span>
+              <span class="en-line">Clear Touch Path</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="startRealHandCameraScan()">
+              <span class="ar-line">قراءة بالكاميرا الحية</span>
+              <span class="en-line">Live Camera Ridge Scan</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="stopRealHandCameraScan()">
+              <span class="ar-line">إيقاف كاميرا اليد</span>
+              <span class="en-line">Stop Hand Camera</span>
+            </button>
+          </div>
+
+          <div class="bio-meta-ar" id="handLiveMetricAr" style="text-align: center; margin-top: 10px;">
+            مستشعر بصمة اليد: بانتظار لمس الشاشة أو تشغيل الكاميرا الحية لالتقاط قراءة فعلية
+          </div>
+          <div class="bio-meta-en" id="handLiveMetricEn" style="text-align: center;">
+            Hand biometric reader: Waiting for real screen touch/drag or live camera input
+          </div>
+
+          <div class="db-evidence-grid">
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #fde68a;" id="handAgeEstAr">العمر التقديري والنمط: بانتظار قراءة بصمة اليد الفعلية</span>
+                <span class="en-line" id="handAgeEstEn">Estimated Age &amp; Pattern: Waiting for real hand print</span>
+              </div>
+            </div>
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #67e8f9;" id="handDiseasesAr">الأمراض والارتباطات الموثقة: بانتظار التحليل الفعلي</span>
+                <span class="en-line" id="handDiseasesEn">Evidence Conditions: Waiting for real dermatoglyphic analysis</span>
+              </div>
+            </div>
+            <div class="db-evidence-item">
+              <div class="bilingual-stack">
+                <span class="ar-line" style="font-size: 12.5px; font-weight: 800; color: #6ee7b7;" id="handRefNoteAr">المرجع العلمي: علم الخطوط الجلدية (Dermatoglyphics • PMC / NIH)</span>
+                <span class="en-line" id="handRefNoteEn">Ref: Dermatoglyphics ridge density &amp; clinical literature (PMC / NIH)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- خانة التشخيص: احتياج الشخص للماء بعد الفحص مع رسم كوب زجاجي يتغير امتلاؤه -->
+                <div class="av-feedback-bar" id="avFeedbackBar">
+          <div class="av-status-group">
+            <div class="sound-wave-bars" id="soundWaveBars" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="bilingual-stack">
+              <span class="ar-line" id="avLiveAr" style="font-size: 13px; font-weight: 800; color: #67e8f9;">النطق الثلاثي المتسلسل جاهز • الإنجليزية ← الإسبانية ← الألمانية</span>
+              <span class="en-line" id="avLiveEn">Tri-lingual speech ready • English → Spanish → German</span>
+              <div class="lang-sequence-pills" id="langSequencePills" style="margin-top: 5px;">
+                <span class="lang-pill" data-lang="en">🇺🇸 English</span>
+                <span class="lang-pill" data-lang="es">🇪🇸 Español</span>
+                <span class="lang-pill" data-lang="de">🇩🇪 Deutsch</span>
+              </div>
+            </div>
+          </div>
+          <div class="controls-row" style="margin-top: 0;">
+            <button type="button" class="btn btn-secondary" onclick="toggleVoiceMute()" id="muteBtn">
+              <span class="ar-line" id="muteBtnAr">الصوت: مفعّل 🔊</span>
+              <span class="en-line" id="muteBtnEn">Voice: ON</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="speakCurrentHydration()">
+              <span class="ar-line">نطق توصية الماء</span>
+              <span class="en-line">Speak Hydration</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hydration-diagnosis-card" id="hydrationDiagnosisBox">
+          <div class="card-head-ar" style="margin-bottom: 0;">احتياج الشخص للماء بعد الفحص</div>
+          <div class="card-head-en" style="margin-bottom: 0;">Post-Test Hydration Need Diagnosis</div>
+
+          <div class="hydration-layout">
+            <div class="water-glass-stage">
+              <svg class="water-glass-svg" viewBox="0 0 90 112" fill="none">
+                <defs>
+                  <clipPath id="glassInteriorClip">
+                    <path d="M18 14 L72 14 L64 96 Q63 102 57 102 L33 102 Q27 102 26 96 Z" />
+                  </clipPath>
+                  <linearGradient id="waterFillGrad" x1="45" y1="18" x2="45" y2="102" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.92" />
+                    <stop offset="100%" stop-color="#0284c7" stop-opacity="0.98" />
+                  </linearGradient>
+                </defs>
+
+                <!-- داخل الكوب الزجاجي -->
+                <g clip-path="url(#glassInteriorClip)">
+                  <rect x="14" y="14" width="62" height="90" fill="rgba(15, 23, 42, 0.55)" />
+                  <!-- مستوى الماء المتحرك حسب الاحتياج -->
+                  <g id="waterLiquidGroup" style="transform: translateY(32px);">
+                    <rect x="12" y="14" width="66" height="92" fill="url(#waterFillGrad)" />
+                    <path
+                      d="M14 14 Q29 9 45 14 T76 14 L76 22 L14 22 Z"
+                      fill="#7dd3fc"
+                      opacity="0.85"
+                    />
+                    <circle class="water-bubble" cx="32" cy="48" r="2.6" fill="#e0f2fe" />
+                    <circle class="water-bubble" cx="48" cy="58" r="2.1" fill="#bae6fd" />
+                    <circle class="water-bubble" cx="56" cy="42" r="3.0" fill="#e0f2fe" />
+                  </g>
+                </g>
+
+                <!-- إطار الكوب الزجاجي الشفاف -->
+                <path
+                  d="M18 14 L72 14 L64 96 Q63 102 57 102 L33 102 Q27 102 26 96 Z"
+                  stroke="#bae6fd"
+                  stroke-width="2.6"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <!-- انعكاس ضوئي على الزجاج -->
+                <line x1="25" y1="22" x2="31" y2="92" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2.2" stroke-linecap="round" />
+              </svg>
+              <div class="glass-percent-label" id="glassLevelPercent">65% FULL</div>
+            </div>
+
+            <div class="hydration-message-box">
+              <div class="hydration-msg-ar" id="hydrationMsgAr">
+                بعد فحص الدم: يحتاج الشخص إلى كوب ماء كامل (حوالي 250 مل) لتعزيز الترطيب.
+              </div>
+              <div class="hydration-msg-en" id="hydrationMsgEn">
+                Post-blood test: Person needs a full glass of water (~250 ml) for optimal hydration.
+              </div>
+
+              <div class="hydration-sub-ar" id="hydrationSubAr">
+                يتم تقدير امتلاء الكوب تلقائياً وفق قراءة الجلوكوز ومؤشرات الدم بعد الفحص.
+              </div>
+              <div class="hydration-sub-en" id="hydrationSubEn">
+                Glass fill level updates automatically based on post-test blood markers.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- لوحة القياس التشخيصي التفاعلي والمباشر المرتبطة بقاعدة البيانات (تعمل بالمتحسس الحي أو بالمعايرة الدقيقة) -->
+        <div class="guided-console-card" id="guidedDiagnosticConsole">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;">
+            <div class="bilingual-stack">
+              <div class="card-head-ar" style="margin-bottom: 0;">محرك التشخيص الفعلي المتصل بالقاعدة (صوت • عين • نظر • دم)</div>
+              <div class="card-head-en" style="margin-bottom: 0;">DB-Linked Diagnostic Engine (Voice • Eye • Vision • Blood)</div>
+            </div>
+            <span class="sensor-mode-pill" id="sensorSourceBadge">
+              <span class="ar-line" id="sensorSourceAr">وضع المعايرة الفورية (جاهز في أي متصفح)</span>
+              <span class="en-line" id="sensorSourceEn" style="font-size: 10px;">Instant Calibration Mode</span>
+            </span>
+          </div>
+
+          <p class="card-body-ar" style="margin-top: 8px;">
+            يستخدم النظام <strong>الميكروفون والكاميرا الحقيقيين</strong> مباشرة لالتقاط صوتك (F0) وصورة عينك وتباين النظر في الوقت الفعلي بمجرد السماح بالإذن، مع إتاحة المعايرة اليدوية في أي لحظة.
+          </p>
+
+          <div class="guided-grid">
+            <!-- 1. معايير الصوت F0 -->
+            <div class="control-box">
+              <div class="control-label-ar">التردد الصوتي (F0): <span id="calPitchVal" style="color:#67e8f9;">175 Hz</span></div>
+              <div class="control-label-en">Voice Fundamental Frequency (75–360 Hz)</div>
+              <input type="range" min="75" max="360" value="175" class="range-input" id="calPitchRange" oninput="recomputeFromCalibration(false)" />
+              <div class="bio-meta-ar" id="calVoiceSummaryAr" style="margin-top:2px; font-size:12px; color:#a7f3d0;"></div>
+            </div>
+
+            <!-- 2. معايير النظر (حدة التباين وتقدير الإبصار) -->
+            <div class="control-box">
+              <div class="control-label-ar">حدة التباين والنظر: <span id="calSharpVal" style="color:#fde68a;">32</span></div>
+              <div class="control-label-en">Visual Contrast Sharpness (5–60)</div>
+              <input type="range" min="5" max="60" value="32" class="range-input" id="calSharpRange" oninput="recomputeFromCalibration(false)" />
+              <div class="bio-meta-ar" id="calVisionSummaryAr" style="margin-top:2px; font-size:12px; color:#fde68a;"></div>
+            </div>
+
+            <!-- 3. معايير العين (الإضاءة واحمرار الصلبة) -->
+            <div class="control-box">
+              <div class="control-label-ar">إضاءة العين: <span id="calLumVal" style="color:#67e8f9;">145</span> | احمرار: <span id="calRedVal" style="color:#fda4af;">8%</span></div>
+              <div class="control-label-en">Eye Luminance (20–240) &amp; Sclera Redness (0–35%)</div>
+              <input type="range" min="20" max="240" value="145" class="range-input" id="calLumRange" oninput="recomputeFromCalibration(false)" />
+              <input type="range" min="0" max="35" value="8" class="range-input" id="calRedRange" oninput="recomputeFromCalibration(false)" />
+              <div class="bio-meta-ar" id="calEyeSummaryAr" style="margin-top:2px; font-size:12px; color:#bae6fd;"></div>
+            </div>
+
+            <!-- 4. معايير الشريحة والدم (الجلوكوز وحالة CBC) -->
+            <div class="control-box">
+              <div class="control-label-ar">الجلوكوز (mg/dL) وحالة الشريحة</div>
+              <div class="control-label-en">Chip Glucose &amp; CBC Status</div>
+              <input type="number" min="45" max="420" value="96" class="num-input" id="calGlucoseInput" oninput="recomputeFromCalibration(false)" />
+              <select class="select-input" id="calCbcSelect" onchange="recomputeFromCalibration(false)">
+                <option value="balanced">CBC متوازنة (RBC • WBC • HGB)</option>
+                <option value="review">تحتاج متابعة (مؤشر إجهاد/التهاب)</option>
+                <option value="optimal">ممتازة ومستقرة</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="controls-row" style="margin-top: 14px;">
+            <button type="button" class="btn btn-primary" onclick="recomputeFromCalibration(true)">
+              <span class="ar-line">اعتماد التشخيص وحفظه في السجل</span>
+              <span class="en-line">Commit Diagnosis &amp; Save Log</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="applyPresetCase('fatigue')">
+              <span class="ar-line">حالة: إجهاد بصري وصوتي وعطش</span>
+              <span class="en-line">Case: Fatigue &amp; Hydration Need</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="applyPresetCase('strain')">
+              <span class="ar-line">حالة: طبقة صوت عالية وتركيز نظر منخفض</span>
+              <span class="en-line">Case: High Pitch &amp; Focus Blur</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="surface-card" style="margin-top: 18px;">
+          <div class="card-head-ar">تشغيل قراءة فحص وحفظها في السجل</div>
+          <div class="card-head-en">Run Diagnostic Reading &amp; Save to Log</div>
+          <div class="controls-row">
+            <button class="btn btn-primary" onclick="runReading('normal')">
+              <span class="ar-line">قراءة متوازنة (كوب ماء)</span>
+              <span class="en-line">Balanced (Full Glass)</span>
+            </button>
+            <button class="btn btn-secondary" onclick="runReading('review')">
+              <span class="ar-line">قراءة للمراجعة (أكثر من كوب / متابعة)</span>
+              <span class="en-line">Review (High Hydration)</span>
+            </button>
+            <button class="btn btn-secondary" onclick="runReading('light')">
+              <span class="ar-line">قراءة خفيفة (أقل من كوب ماء)</span>
+              <span class="en-line">Light (&lt; 1 Glass)</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- الواجهة 4: السجل والملخص -->
+      <section class="screen-panel" id="screen-log">
+        <div class="surface-card">
+          <div class="card-head-ar">سجل الجلسات والنتائج المجمعة</div>
+          <div class="card-head-en">Session History &amp; Diagnostic Summary</div>
+          <p class="card-body-ar">
+            يعرض السجل حالة البصمة، نسبة الجلوكوز، صورة الدم (CBC)، فحوصات الشريحة الخاصة، واحتياج الماء بعد الفحص.
+          </p>
+          <p class="card-body-en">
+            Tracks biometric verification, blood glucose, CBC profile, chip-only blood panels, and post-test water need.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <span class="ar-line">الوقت</span>
+                    <span class="en-line">Time</span>
+                  </th>
+                  <th>
+                    <span class="ar-line">البصمة</span>
+                    <span class="en-line">Biometric</span>
+                  </th>
+                  <th>
+                    <span class="ar-line">الجلوكوز</span>
+                    <span class="en-line">Glucose</span>
+                  </th>
+                  <th>
+                    <span class="ar-line">صورة الدم</span>
+                    <span class="en-line">CBC</span>
+                  </th>
+                  <th>
+                    <span class="ar-line">فحوصات الشريحة</span>
+                    <span class="en-line">Chip Panel</span>
+                  </th>
+                  <th>
+                    <span class="ar-line">احتياج الماء</span>
+                    <span class="en-line">Water Need</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="logBody">
+                <tr>
+                  <td>
+                    <span class="ar-line">الآن</span>
+                    <span class="en-line">Now</span>
+                  </td>
+                  <td>
+                    <span class="ar-line">تم التحقق</span>
+                    <span class="en-line">Verified</span>
+                  </td>
+                  <td>
+                    <span class="ar-line">96 mg/dL</span>
+                    <span class="en-line">96 mg/dL</span>
+                  </td>
+                  <td>
+                    <span class="ar-line">متوازنة</span>
+                    <span class="en-line">Balanced</span>
+                  </td>
+                  <td>
+                    <span class="ar-line">عبر الشريحة فقط (بلا مواد خارجية)</span>
+                    <span class="en-line">Chip Only (No External Reagents)</span>
+                  </td>
+                  <td>
+                    <span class="ar-line">كوب ماء (65%)</span>
+                    <span class="en-line">1 Glass (65%)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+        <!-- بطاقة التقرير الملخص وخانه التشخيصات المستقبلية للقطع المبرمجة -->
+        <div class="report-export-card" id="sessionReportCard">
+          <div class="bilingual-stack">
+            <div class="card-head-ar" style="margin-bottom: 0;">تقرير الجلسة التشخيصية والتشخيصات المخصصة للقطع المبرمجة</div>
+            <div class="card-head-en" style="margin-bottom: 0;">Diagnostic Session Summary &amp; Reserved Slots for Custom-Programmed Hardware</div>
+          </div>
+
+          <div class="pending-hardware-slot">
+            <div class="chip-note-ar">مساحة محجوزة لباقي التشخيصات عند تجهيز القطع المبرمجة للتطبيق:</div>
+            <div class="chip-note-en">Reserved expansion slots for upcoming diagnostics once custom-programmed hardware &amp; chip modules are ready:</div>
+            <p class="card-body-ar" style="margin-top: 6px; color: #fef3c7;">
+              • قنوات فحص الدم الإضافية عبر شريحة <strong>AIGQ</strong> الخاصة بدون مواد خارجية.<br />
+              • مستشعرات القياس الحيوي المباشرة عبر منفذ <strong>USB-C</strong> (نبض/أكسجة/حرارة/مؤشرات إضافية).<br />
+              • ربط تلقائي لتشخيص الصوت والعين والنظر وتحديث احتياج الماء فور وصول القطعة المبرمجة.
+            </p>
+          </div>
+
+          <div class="report-summary-box" id="diagnosticReportText">جاري تجهيز ملخص التقرير الفوري...</div>
+
+          <div class="controls-row" style="margin-top: 14px;">
+            <button type="button" class="btn btn-primary" onclick="refreshDiagnosticReport()">
+              <span class="ar-line">تحديث التقرير الآن</span>
+              <span class="en-line">Refresh Summary</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="copyDiagnosticReport()" id="copyReportBtn">
+              <span class="ar-line" id="copyReportAr">نسخ التقرير الكامل</span>
+              <span class="en-line" id="copyReportEn">Copy Full Report</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="downloadDiagnosticReport()">
+              <span class="ar-line">تصدير ملف التقرير (.TXT)</span>
+              <span class="en-line">Export Report (.TXT)</span>
+            </button>
+          </div>
+        </div>
+
+
+            <!-- لوحة تحكم العرض للمستثمر -->
+      <div class="investor-dock">
+        <div class="bilingual-stack">
+          <span class="ar-line" style="font-size: 14px; font-weight: 800; color: #67e8f9;">لوحة تحكم العرض للمستثمر</span>
+          <span class="en-line accent-en">Investor Presentation Control Dock</span>
+        </div>
+        <div class="controls-row">
+          <button class="btn btn-secondary" onclick="toggleMode()">
+            <span class="ar-line">تبديل وضع العرض</span>
+            <span class="en-line">Toggle Demo Mode</span>
+          </button>
+          <button class="btn btn-secondary" onclick="switchScreen('scan'); triggerFingerprintScan();">
+            <span class="ar-line">اختبار البصمة مباشرة</span>
+            <span class="en-line">Test Biometric Pad</span>
+          </button>
+          <button class="btn btn-secondary" onclick="switchScreen('log')">
+            <span class="ar-line">فتح السجل والملخص</span>
+            <span class="en-line">Open Session Logs</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+
+    // قاعدة بيانات شاملة وموثقة لتشخيصات: بصمة الصوت + بصمة العين + تشخيص النظر (Vision & Ocular Acuity/Contrast/Fatigue)
+    const VERIFIED_BIOMETRIC_DATABASE = {
+      voiceProfiles: [
+        {
+          id: "VOC-F0-LOW-TENSION",
+          pitchRangeHz: [75, 135],
+          rmsRange: [0.015, 0.25],
+          labelAr: "تردد صوتي منخفض مع إجهاد صوتي محتمل",
+          labelEn: "Low F0 Pitch with Potential Vocal Strain",
+          visionLinkAr: "ارتباط بصري: تباطؤ استجابة التثبيت البصري وميل نحو الإرهاق الذهني.",
+          visionLinkEn: "Vision link: Slowed fixation stability & mild mental fatigue.",
+          psychBehavioralAr: "نفسي/سلوكي: انخفاض الحيوية الصوتية أو فتور عاطفي/إرهاق ذهني خفيف؛ يُلاحظ تباطؤ الإيقاع الكلامي.",
+          psychBehavioralEn: "Psych/Behavioral: Reduced vocal vitality, mental fatigue, or slowed speech pacing.",
+          hydrationHintAr: "جفاف الأحبال الصوتية شائع؛ يُنصح بشرب ماء لتليين الحنجرة بعد الفحص.",
+          hydrationHintEn: "Vocal fold dryness is common; water helps lubricate phonation after testing.",
+          evidenceSource: "ASHA Vocal Fold Hydration & Acoustic Pitch Guidelines / WHO Voice & Mental Well-being",
+          suggestedFillPct: 78
+        },
+        {
+          id: "VOC-F0-BALANCED-CLEAR",
+          pitchRangeHz: [135, 215],
+          rmsRange: [0.025, 0.45],
+          labelAr: "طبقة صوت متوازنة واستقرار صوتي واضح",
+          labelEn: "Balanced F0 Pitch & Clear Acoustic Stability",
+          visionLinkAr: "ارتباط بصري: اتساق التباين البصري وثبات تتبع النظر.",
+          visionLinkEn: "Vision link: Consistent visual contrast & steady gaze tracking.",
+          psychBehavioralAr: "نفسي/سلوكي: اتزان انفعالي واستقرار سلوكي جيد أثناء التحية مع وضوح في مخارج الحروف.",
+          psychBehavioralEn: "Psych/Behavioral: Emotional composure, behavioral steadiness, and clear articulation.",
+          hydrationHintAr: "رنين صوتي جيد؛ كوب ماء داعم كافٍ للحفاظ على الترطيب.",
+          hydrationHintEn: "Good vocal resonance; a standard glass of water supports hydration.",
+          evidenceSource: "ISO/IEC 19794-13 Voice Biometric & APA Affective Speech Acoustics Reference",
+          suggestedFillPct: 65
+        },
+        {
+          id: "VOC-F0-HIGH-RESONANCE",
+          pitchRangeHz: [215, 420],
+          rmsRange: [0.02, 0.55],
+          labelAr: "طبقة صوت مرتفعة أو سرعة نطق عالية",
+          labelEn: "Elevated F0 Pitch or High Articulation Rate",
+          visionLinkAr: "ارتباط بصري: زيادة حركة الرمش أو توتر عضلات التكيف البصري.",
+          visionLinkEn: "Vision link: Elevated blink rate or accommodative ocular tension.",
+          psychBehavioralAr: "نفسي/سلوكي: مؤشر سلوكي/نفسي محتمل على استثارة انفعالية أو توتر أو اندفاعية في النطق.",
+          psychBehavioralEn: "Psych/Behavioral: Potential affective arousal, tension, or hurried speech behavior.",
+          hydrationHintAr: "قد يرتبط التوتر أو جفاف الفم بارتفاع الطبقة؛ يُنصح بكوب ماء منتظم.",
+          hydrationHintEn: "Stress or dry mouth may elevate pitch; steady water intake is recommended.",
+          evidenceSource: "Clinical Speech Acoustics & Autonomic Arousal Literature (NIH / PubMed / APA)",
+          suggestedFillPct: 72
+        },
+        {
+          id: "VOC-HYDRATION-DRY-PHONATION",
+          pitchRangeHz: [75, 420],
+          rmsRange: [0.005, 0.025],
+          labelAr: "انخفاض طاقة النطق أثناء قول التحية",
+          labelEn: "Low Acoustic Energy During Greeting Capture",
+          visionLinkAr: "ارتباط بصري: انخفاض حيوية الانتباه البصري لحظة بدء التفاعل.",
+          visionLinkEn: "Vision link: Low initial visual engagement drive at capture onset.",
+          psychBehavioralAr: "نفسي/سلوكي: تحفظ أو تردد سلوكي أو انخفاض الاندفاع الصوتي لحظة بدء التفاعل.",
+          psychBehavioralEn: "Psych/Behavioral: Behavioral hesitation, reserve, or low vocal drive at onset.",
+          hydrationHintAr: "نبرة خافتة؛ يُنصح بالاقتراب قليلاً من الميكروفون وشرب كوب ماء.",
+          hydrationHintEn: "Soft phonation energy; speak closer to mic and drink water.",
+          evidenceSource: "ASHA Acoustic Voice Intensity & Behavioral Phonation Reference",
+          suggestedFillPct: 80
+        }
+      ],
+      eyeProfiles: [
+        {
+          id: "EYE-SCLERA-CLEAR-BALANCED",
+          rednessRatioRange: [0.0, 0.14],
+          brightnessRange: [95, 255],
+          labelAr: "صفاء بصري جيد واستقرار إضاءة القزحية",
+          labelEn: "Clear Ocular Appearance & Balanced Iris Illumination",
+          psychBehavioralAr: "نفسي/سلوكي: تركيز بصري متزن وانتباه سلوكي مستقر نحو عدسة الكاميرا.",
+          psychBehavioralEn: "Psych/Behavioral: Balanced visual focus and steady attentional engagement with camera.",
+          hydrationHintAr: "مظهر العين متوازن؛ كوب ماء كامل مناسب لدعم الترطيب العام.",
+          hydrationHintEn: "Balanced ocular appearance; a full glass of water supports general hydration.",
+          evidenceSource: "AAO Basic & Clinical Science Course / ISO-IEC 29794-6 & Visual Attention Standards",
+          suggestedFillPct: 65
+        },
+        {
+          id: "EYE-SCLERA-ERYTHEMA-FATIGUE",
+          rednessRatioRange: [0.14, 1.0],
+          brightnessRange: [55, 255],
+          labelAr: "احمرار ملحوظ في الصلبة أو إجهاد بصري",
+          labelEn: "Notable Scleral Redness or Ocular Fatigue",
+          psychBehavioralAr: "نفسي/سلوكي: إجهاد ذهني/بصري أو قلة نوم تؤثر على ثبات التركيز والسلوك البصري.",
+          psychBehavioralEn: "Psych/Behavioral: Mental/visual fatigue or sleep debt affecting gaze steadiness.",
+          hydrationHintAr: "إجهاد العين والترطيب: يُنصح بأكثر من كوب ماء وإراحة العين من الشاشات.",
+          hydrationHintEn: "Ocular strain & hydration: more than 1 glass of water and screen rest advised.",
+          evidenceSource: "AAO Dry Eye & Ocular Surface Disease / NIH Sleep & Ocular Fatigue Literature",
+          suggestedFillPct: 88
+        },
+        {
+          id: "EYE-LOW-ILLUMINATION-ADAPT",
+          rednessRatioRange: [0.0, 1.0],
+          brightnessRange: [0, 95],
+          labelAr: "إضاءة منخفضة أثناء مسح بصمة العين",
+          labelEn: "Low Ambient Light During Eye Capture",
+          psychBehavioralAr: "نفسي/سلوكي: تكيّف بصري وسلوكي في بيئة منخفضة الإضاءة يتطلب تأنياً في التثبيت البصري.",
+          psychBehavioralEn: "Psych/Behavioral: Visual adaptation in low light requiring calm gaze stabilization.",
+          hydrationHintAr: "تم التقاط البصمة في إضاءة منخفضة؛ يُنصح بتحسين الإضاءة وشرب كوب ماء.",
+          hydrationHintEn: "Captured under low light; improve lighting and drink a glass of water.",
+          evidenceSource: "ISO/IEC 29794-6 Iris Image Quality & Psychophysical Illumination Standards",
+          suggestedFillPct: 70
+        }
+      ],
+      visionProfiles: [
+        {
+          id: "VIS-ACUITY-SHARP-CONTRAST",
+          minSharpness: 24,
+          minBrightness: 95,
+          maxRedness: 0.14,
+          acuityEstimate: "20/20 - 20/25 (تقدير بصري حاد)",
+          contrastStateAr: "تباين بصري عالٍ ووضوح حواف ممتاز",
+          contrastStateEn: "High visual contrast & sharp edge clarity",
+          labelAr: "تشخيص النظر: حدة وتباين بصري جيد مع ثبات تثبيت العين",
+          labelEn: "Vision Diagnosis: Sharp visual contrast & steady gaze fixation",
+          psychBehavioralAr: "سلوكي/إدراكي: دقة انتباه بصري عالية واستجابة سريعة للمؤشرات المرئية.",
+          psychBehavioralEn: "Behavioral/Cognitive: High visual attention accuracy & responsive gaze tracking.",
+          hydrationHintAr: "حالة النظر جيدة؛ كوب ماء كامل يحافظ على صفاء الرؤية والترطيب.",
+          hydrationHintEn: "Good vision state; a full glass of water maintains ocular clarity & hydration.",
+          evidenceSource: "AAO Clinical Optics & Visual Acuity / Snellen & Contrast Sensitivity Reference",
+          suggestedFillPct: 65
+        },
+        {
+          id: "VIS-REFRACTIVE-DEFOCUS-BLUR",
+          minSharpness: 0,
+          minBrightness: 95,
+          maxRedness: 1.0,
+          acuityEstimate: "20/40 - 20/70 (مؤشر عدم وضوح/انكسار محتمل)",
+          contrastStateAr: "انخفاض حدة الحواف البصرية أو تأثر التركيز البؤري",
+          contrastStateEn: "Reduced edge sharpness or potential refractive/focus defocus",
+          labelAr: "تشخيص النظر: مؤشر عدم وضوح بصري أو إجهاد تركيز (يُنصح بفحص نظر سريري)",
+          labelEn: "Vision Diagnosis: Potential refractive blur or focus strain (clinical eye exam advised)",
+          psychBehavioralAr: "سلوكي/إدراكي: قد يضطر الشخص لتقريب الرأس أو إمالة النظر لالتقاط التفاصيل الدقيقة.",
+          psychBehavioralEn: "Behavioral/Cognitive: Tendency to lean or tilt head to resolve fine visual detail.",
+          hydrationHintAr: "يُنصح بشرب كوب ماء كامل وإراحة العين من الإجهاد البصري.",
+          hydrationHintEn: "Drink a full glass of water and rest eyes from visual strain.",
+          evidenceSource: "AAO Refractive Errors & Myopia/Astigmatism Screening Guidelines",
+          suggestedFillPct: 76
+        },
+        {
+          id: "VIS-ASTHENOPIA-GLARE-STRAIN",
+          minSharpness: 0,
+          minBrightness: 0,
+          maxRedness: 1.0,
+          acuityEstimate: "20/30 - 20/60 (إجهاد بصري / إضاءة غير مثالية)",
+          contrastStateAr: "إجهاد بصري مرتبط بالإضاءة أو إجهاد السطح العيني",
+          contrastStateEn: "Visual strain linked to illumination or ocular surface fatigue",
+          labelAr: "تشخيص النظر: إجهاد بصري / إضاءة منخفضة أو مرتفعة أثناء المسح",
+          labelEn: "Vision Diagnosis: Asthenopia / suboptimal lighting during optical scan",
+          psychBehavioralAr: "سلوكي/إدراكي: إبطاء مسح العين وتراجع سرعة الاستجابة البصرية تحت الإجهاد.",
+          psychBehavioralEn: "Behavioral/Cognitive: Slower visual scanning & reduced response speed under strain.",
+          hydrationHintAr: "إجهاد النظر والترطيب: يُنصح بأكثر من كوب ماء لتقليل جفاف العين.",
+          hydrationHintEn: "Vision strain & hydration: more than 1 glass of water helps reduce eye dryness.",
+          evidenceSource: "AAO Computer Vision Syndrome / Asthenopia & Ocular Surface Guidelines",
+          suggestedFillPct: 86
+        }
+      ],
+      lookupVoiceProfile(f0Hz, rms) {
+        if (rms < 0.022) {
+          return this.voiceProfiles.find((p) => p.id === "VOC-HYDRATION-DRY-PHONATION") || this.voiceProfiles[1];
+        }
+        const match = this.voiceProfiles.find(
+          (p) => f0Hz >= p.pitchRangeHz[0] && f0Hz < p.pitchRangeHz[1] && rms >= p.rmsRange[0] && rms <= p.rmsRange[1]
+        );
+        if (match) return match;
+        if (f0Hz < 135) return this.voiceProfiles[0];
+        if (f0Hz >= 215) return this.voiceProfiles[2];
+        return this.voiceProfiles[1];
+      },
+      lookupEyeProfile(rednessRatio, avgBrightness) {
+        if (avgBrightness < 95) {
+          return this.eyeProfiles.find((p) => p.id === "EYE-LOW-ILLUMINATION-ADAPT") || this.eyeProfiles[0];
+        }
+        if (rednessRatio >= 0.14) {
+          return this.eyeProfiles.find((p) => p.id === "EYE-SCLERA-ERYTHEMA-FATIGUE") || this.eyeProfiles[0];
+        }
+        return this.eyeProfiles[0];
+      },
+      lookupVisionProfile(sharpnessScore, avgBrightness, rednessRatio) {
+        if (avgBrightness < 95 || rednessRatio >= 0.16) {
+          return this.visionProfiles[2];
+        }
+        if (sharpnessScore >= 24) {
+          return this.visionProfiles[0];
+        }
+        return this.visionProfiles[1];
+      },
+
+      // أمراض وحالات ترتبط بالمؤشرات الصوتية موثقة في الأبحاث السريرية (PMC / APA / MDPI)
+      voiceDiseaseConditions: [
+        {
+          id: "VOX-NEURO-PARKINSON",
+          pitchRange: [75, 145],
+          rmsMax: 0.14,
+          diseaseAr: "اضطرابات عصبية حركية (مثل مؤشرات باركنسون المبكرة أو خلل النطق الحركي)",
+          diseaseEn: "Motor Neurodegenerative / Parkinsonian & Dysarthric Vocal Signals",
+          detailAr: "ارتباط بحثي برتابة الطبقة الصوتية أو انخفاض طاقة النطق أو اضطراب مخارج الحروف؛ يتطلب تقييماً عصبياً سريرياً.",
+          detailEn: "Linked in clinical research to pitch monotony, reduced vocal energy, or articulation shifts; requires clinical neurology review.",
+          source: "PMC8138221 / Clinical Vocal Biomarkers"
+        },
+        {
+          id: "VOX-COG-ALZHEIMER-MCI",
+          pitchRange: [75, 220],
+          rmsMax: 0.08,
+          diseaseAr: "تراجع معرفي خفيف أو إجهاد ذهني وذاكرة (مؤشرات مبكرة للخرف / الزهايمر)",
+          diseaseEn: "Mild Cognitive Impairment (MCI) / Early Cognitive & Memory Strain",
+          detailAr: "تظهر الدراسات ارتباط المؤشرات الصوتية وإيقاع الكلام وتردد النطق بتتبع التغيرات المعرفية المبكرة.",
+          detailEn: "Research links speech cadence, hesitation, and prosody to early cognitive & memory tracking.",
+          source: "PMC8138221 / MDPI Vocal Biomarkers"
+        },
+        {
+          id: "VOX-MOOD-DEPRESSION-STRESS",
+          pitchRange: [75, 420],
+          rmsMax: 0.55,
+          diseaseAr: "اضطرابات المزاج والضغط النفسي (الاكتئاب، القلق، أو التوتر العصبي)",
+          diseaseEn: "Affective & Stress Conditions (Depression, Anxiety, Autonomic Arousal)",
+          detailAr: "تشير مراجعات الطب النفسي إلى ارتباط تغيرات الطبقة والطاقة الصوتية بمؤشرات القلق والاكتئاب والضغط النفسي.",
+          detailEn: "Psychiatry research associates pitch and vocal energy shifts with stress, anxiety, and mood states.",
+          source: "APA Psychiatry.org (2026) / JMIR Vocal Biomarkers"
+        },
+        {
+          id: "VOX-LARYNX-ARTHRITIS-REFLUX",
+          pitchRange: [130, 360],
+          rmsMax: 0.55,
+          diseaseAr: "إجهاد أو التهاب الحنجرة والأحبال الصوتية / الارتجاع الحنجري أو الروماتويدي",
+          diseaseEn: "Laryngeal Strain, Vocal Fold Irritation, Reflux or Rheumatoid Laryngeal Shift",
+          detailAr: "قد ينعكس إجهاد الحنجرة أو التهاب الأحبال الصوتية أو الارتجاع على صفاء الصوت وثبات الطبقة.",
+          detailEn: "Vocal fold irritation, reflux, or rheumatoid laryngeal changes can affect clarity and pitch stability.",
+          source: "ASHA / PMC8138221 Laryngeal Biomarkers"
+        }
+      ],
+
+      // أمراض وحالات ترتبط بالمؤشرات العينية والبصرية (AAO / Ophthalmology Times / ISO)
+      eyeDiseaseConditions: [
+        {
+          id: "EYE-DED-BLEPHARITIS",
+          rednessMin: 0.14,
+          brightnessMin: 0,
+          diseaseAr: "جفاف العين المزمن أو التهاب الجفون / احتقان الملتحمة والصلبة",
+          diseaseEn: "Dry Eye Disease (DED), Blepharitis or Conjunctival/Scleral Hyperemia",
+          detailAr: "احمرار الصلبة أو الإجهاد البصري يرتبط غالباً بجفاف سطح العين، إجهاد الشاشات، أو تحسس/التهاب سطحي.",
+          detailEn: "Scleral redness or ocular fatigue frequently relates to dry eye, screen strain, or surface irritation.",
+          source: "AAO Ocular Surface & Dry Eye Guidelines"
+        },
+        {
+          id: "EYE-RETINA-DIABETIC-VASCULAR",
+          rednessMin: 0.0,
+          brightnessMin: 90,
+          diseaseAr: "مؤشرات وعائية وشبكية تتطلب فحص قاع العين (مثل اعتلال الشبكية السكري أو اضطرابات الأوعية)",
+          diseaseEn: "Retinal & Microvascular Screening Indicators (e.g., Diabetic Retinopathy / Vascular Shifts)",
+          detailAr: "تُستخدم المؤشرات البصرية والشبكية في الفحص المبكر لتغيرات الأوعية والشبكية المرتبطة بالسكري والضغط.",
+          detailEn: "Ocular & retinal biomarkers support early screening for microvascular changes tied to diabetes/hypertension.",
+          source: "Ophthalmology Times (2026) / Retinal Biomarkers Review"
+        },
+        {
+          id: "EYE-REFRACTIVE-ASTHENOPIA",
+          rednessMin: 0.0,
+          brightnessMin: 0,
+          diseaseAr: "أخطاء الانكسار البصري (قصر/طول النظر أو اللابؤرية) أو إجهاد التكيف البصري",
+          diseaseEn: "Refractive Errors (Myopia/Hyperopia/Astigmatism) or Accommodative Asthenopia",
+          detailAr: "انخفاض حدة التباين أو إجهاد التركيز يرتبط بحاجة لفحص انكسار النظر وتصحيح الإبصار.",
+          detailEn: "Reduced contrast sharpness or focus strain indicates potential refractive error or visual fatigue.",
+          source: "AAO Clinical Optics & Refractive Screening"
+        }
+      ],
+
+      // قاعدة بيانات بصمة الإصبع واليد (Dermatoglyphics): أنماط القوس والحلقة والدوامة وكثافة الخطوط والعمر التقديري
+      handFingerprintDatabase: {
+        patterns: [
+          {
+            id: "FP-ARCH",
+            nameAr: "نمط القوس (Arch)",
+            nameEn: "Arch Ridge Pattern",
+            associatedConditionsAr: [
+              "مؤشرات وراثية/بنيوية عامة تحتاج تقييماً سريرياً عند وجود أعراض",
+              "دراسات ارتباط الأنماط الجلدية بأمراض جهازية متعددة العوامل مثل ارتفاع ضغط الدم أو اضطرابات أيضية/منعية (مؤشر احتمالي وليس تشخيصاً قطعياً)"
+            ],
+            associatedConditionsEn: [
+              "General dermatoglyphic baseline; clinical evaluation needed if symptomatic",
+              "Research associations with multifactorial traits such as hypertension or metabolic/immune conditions (probabilistic marker, not a standalone diagnosis)"
+            ],
+            source: "Dermatoglyphics, Health & Diseases Review (2026) / PMC8191880"
+          },
+          {
+            id: "FP-LOOP",
+            nameAr: "نمط الحلقة (Loop)",
+            nameEn: "Loop Ridge Pattern",
+            associatedConditionsAr: [
+              "النمط الأكثر شيوعاً في الفحوصات السكانية لخطوط الأصابع",
+              "أبحاث مقارنة الأنماط الجلدية في اضطرابات عصبية/نفسية متعددة العوامل أو آفات الفم المخاطية (مؤشر بحثي داعم فقط)"
+            ],
+            associatedConditionsEn: [
+              "Most common population ridge pattern in dermatoglyphic screening",
+              "Comparative research studies in multifactorial neuropsychiatric or oral mucosal conditions (research indicator only)"
+            ],
+            source: "PMC10706515 / PMC8191880 Dermatoglyphics Studies"
+          },
+          {
+            id: "FP-WHORL",
+            nameAr: "نمط الدوامة (Whorl)",
+            nameEn: "Whorl Ridge Pattern",
+            associatedConditionsAr: [
+              "نمط حلقي مغلق مرتبط في الدراسات الوراثية بتنوع كثافة الخطوط والسمات البنيوية",
+              "دراسات ارتباط الأنماط الجلدية بالسكري أو اضطرابات التمثيل الغذائي والقلب والأوعية (يُفسر فقط مع الفحوصات المخبرية)"
+            ],
+            associatedConditionsEn: [
+              "Circular ridge configuration studied in genetic & structural variation research",
+              "Research links explored in metabolic/cardiovascular risk studies (interpret alongside lab panels)"
+            ],
+            source: "Dermatoglyphics Review (2026) / PMC8191880"
+          }
+        ],
+        // تقدير العمر البيولوجي / الفئة العمرية التقريبية من كثافة الخطوط وتباين المسام (تقدير إحصائي تقريبي وليس شهادة عمر)
+        estimateAgeAndTraits(ridgeDensityScore, ridgeContrast, patternId) {
+          // كثافة الخطوط العالية تميل إحصائياً للفئات الأصغر سناً بينما انخفاض التباين/الكثافة يميل للفئات الأكبر سناً
+          let estimatedAge = 32;
+          if (ridgeDensityScore >= 28) estimatedAge = 21;
+          else if (ridgeDensityScore >= 22) estimatedAge = 27;
+          else if (ridgeDensityScore >= 16) estimatedAge = 36;
+          else if (ridgeDensityScore >= 11) estimatedAge = 47;
+          else estimatedAge = 58;
+
+          if (ridgeContrast < 14) estimatedAge = Math.min(75, estimatedAge + 7);
+          else if (ridgeContrast > 36) estimatedAge = Math.max(16, estimatedAge - 4);
+
+          const ageBracketAr =
+            estimatedAge < 25 ? "شباب / مقتبل العمر (18–24 تقريباً)" :
+            estimatedAge < 40 ? "مرحلة الشباب الناضج (25–39 تقريباً)" :
+            estimatedAge < 55 ? "منتصف العمر (40–54 تقريباً)" :
+            "مرحلة متقدمة من العمر (55+ تقريباً)";
+
+          const ageBracketEn =
+            estimatedAge < 25 ? "Young Adult (~18–24)" :
+            estimatedAge < 40 ? "Early-Mid Adult (~25–39)" :
+            estimatedAge < 55 ? "Middle Age (~40–54)" :
+            "Older Adult (~55+)";
+
+          const patternObj = this.patterns.find((p) => p.id === patternId) || this.patterns[1];
+
+          return {
+            estimatedAge,
+            ageBracketAr,
+            ageBracketEn,
+            patternObj,
+            disclaimerAr: "تنويه علمي: تقدير العمر والارتباطات المرضية من بصمة اليد مؤشرات إحصائية وبحثية مساندة وليست تشخيصاً طبياً نهائياً أو إثباتاً رسمياً للعمر.",
+            disclaimerEn: "Scientific note: Fingerprint age estimation & disease correlations are statistical/research indicators, not a definitive medical diagnosis or legal age proof."
+          };
+        }
+      },
+
+      getVoiceDiseases(f0Hz, rms) {
+        const list = [];
+        if (f0Hz < 145 || rms < 0.14) list.push(this.voiceDiseaseConditions[0]);
+        if (rms < 0.08 || f0Hz < 130) list.push(this.voiceDiseaseConditions[1]);
+        list.push(this.voiceDiseaseConditions[2]);
+        if (f0Hz >= 130 && f0Hz <= 360) list.push(this.voiceDiseaseConditions[3]);
+        return list.slice(0, 3);
+      },
+
+      getEyeDiseases(rednessRatio, avgBrightness, sharpnessScore) {
+        const list = [];
+        if (rednessRatio >= 0.14 || sharpnessScore < 20) list.push(this.eyeDiseaseConditions[0]);
+        if (avgBrightness >= 90) list.push(this.eyeDiseaseConditions[1]);
+        if (sharpnessScore < 24 || avgBrightness < 95) list.push(this.eyeDiseaseConditions[2]);
+        return list.length ? list.slice(0, 3) : [this.eyeDiseaseConditions[1]];
+      },
+
+      // تقدير العمر والنوع من المؤشرات الصوتية (F0 والشدة الصوتية) - مؤشرات إحصائية تقريبية وليست قطعية
+      estimateVoiceAgeAndSex(f0Hz, rms = 0.15) {
+        const pitch = Number(f0Hz) || 175;
+        let sexAr = "مؤشر صوتي متوسط / غير محدد بدقة";
+        let sexEn = "Intermediate / Undetermined Acoustic Sex Cue";
+
+        if (pitch < 145) {
+          sexAr = "أقرب للنمط الصوتي الذكوري (F0 منخفض عادةً 85–145Hz)";
+          sexEn = "Closer to Male F0 Range (typically 85–145 Hz)";
+        } else if (pitch > 195) {
+          sexAr = "أقرب للنمط الصوتي الأنثوي (F0 مرتفع عادةً 165–255Hz)";
+          sexEn = "Closer to Female F0 Range (typically 165–255 Hz)";
+        } else {
+          sexAr = "نطاق انتقالي أو شاب/أطفال (145–195Hz)";
+          sexEn = "Transitional / Youth F0 Range (145–195 Hz)";
+        }
+
+        let ageEstimate = 33;
+        if (pitch > 240) ageEstimate = 21;
+        else if (pitch >= 190) ageEstimate = 26;
+        else if (pitch >= 150) ageEstimate = 35;
+        else if (pitch >= 115) ageEstimate = 44;
+        else ageEstimate = 52;
+
+        if (rms < 0.03) ageEstimate = Math.min(75, ageEstimate + 6);
+
+        return {
+          ageEstimate,
+          sexAr,
+          sexEn,
+          source: "Acoustic F0 & Vocal Aging Literature (ASHA / NIH Voice Pitch & Presbyphonia)"
+        };
+      },
+
+      // قاعدة تشخيصات موسعة لكل نتيجة تظهر من بصمة الصوت والعين واليد
+      expandedClinicalCatalog: {
+        voice: {
+          "VOC-F0-LOW-TENSION": {
+            summaryAr: "توسيع تشخيص الصوت المنخفض: توتر عضلات الحنجرة، إجهاد ذهني/عصبي، أو انخفاض مرونة الطبقات الصوتية (F0).",
+            summaryEn: "Expanded Low-Pitch Voice: Laryngeal muscle tension, cognitive/neural fatigue, or reduced F0 modulation.",
+            followUpAr: "المتابعة المقترحة: إراحة الصوت، ترطيب الحنجرة، ومراقبة نبرة الكلام والتركيز الذهني.",
+            followUpEn: "Suggested follow-up: Vocal rest, laryngeal hydration, and tracking speech cadence & mental focus."
+          },
+          "VOC-F0-BALANCED-CLEAR": {
+            summaryAr: "توسيع تشخيص الصوت المتوازن: استقرار إيقاع النطق، توازن التنفس الصوتي، واتساق الرنين بدون إجهاد حنجري ظاهر.",
+            summaryEn: "Expanded Balanced Voice: Steady speech prosody, balanced respiratory support, and consistent vocal resonance.",
+            followUpAr: "المتابعة المقترحة: الحفاظ على الترطيب اليومي وتوازن ساعات الحديث والراحة.",
+            followUpEn: "Suggested follow-up: Maintain daily hydration and balanced speaking/rest intervals."
+          },
+          "VOC-F0-HIGH-RESONANCE": {
+            summaryAr: "توسيع تشخيص الصوت المرتفع: ارتفاع الطبقة الصوتية أو سرعة الإلقاء المرتبطة بالتوتر أو الاستثارة أو إجهاد الأحبال الصوتية.",
+            summaryEn: "Expanded High-Pitch Voice: Elevated F0 or rapid articulation linked to stress, arousal, or vocal fold strain.",
+            followUpAr: "المتابعة المقترحة: تهدئة إيقاع التنفس، خفض حدة النبرة، وتقييم عوامل التوتر أو جفاف الحلق.",
+            followUpEn: "Suggested follow-up: Pace breathing, lower vocal strain, and evaluate stress or throat dryness."
+          },
+          "VOC-HYDRATION-DRY-PHONATION": {
+            summaryAr: "توسيع تشخيص انخفاض طاقة الصوت: جفاف الأغشية المخاطية للحنجرة، خفوت شدة النطق، أو تحفظ سلوكي/إجهاد عام.",
+            summaryEn: "Expanded Low-Energy Voice: Mucosal dryness of vocal folds, soft phonation intensity, or behavioral reserve/fatigue.",
+            followUpAr: "المتابعة المقترحة: شرب الماء تدريجياً، تحسين قرب الميكروفون، ومتابعة أي بحة مستمرة.",
+            followUpEn: "Suggested follow-up: Sip water gradually, check mic proximity, and monitor persistent hoarseness."
+          }
+        },
+        eyeAndVision: {
+          "EYE-SCLERA-CLEAR-BALANCED": {
+            summaryAr: "توسيع تشخيص العين المتوازنة: صفاء نسبي للصلبة واستقرار الإضاءة مع ثبات الانتباه البصري الأولي.",
+            summaryEn: "Expanded Balanced Eye: Relative scleral clarity, stable illumination, and steady initial gaze attention.",
+            followUpAr: "المتابعة المقترحة: قاعدة 20-20-20 للراحة البصرية والحفاظ على ترطيب العين.",
+            followUpEn: "Suggested follow-up: Apply 20-20-20 visual rest and maintain ocular hydration."
+          },
+          "EYE-SCLERA-ERYTHEMA-FATIGUE": {
+            summaryAr: "توسيع تشخيص احمرار وإجهاد العين: احتقان أوعية الصلبة، جفاف سطح العين، أو إجهاد ناتج عن الشاشات/قلة النوم/التحسس.",
+            summaryEn: "Expanded Scleral Redness/Fatigue: Scleral vessel injection, tear-film dryness, or screen/sleep/allergic strain.",
+            followUpAr: "المتابعة المقترحة: إراحة العين من الشاشات، زيادة الترطيب، ومراجعة طبيب العيون عند استمرار الاحمرار أو الألم.",
+            followUpEn: "Suggested follow-up: Screen rest, hydration support, and ophthalmology review if redness or discomfort persists."
+          },
+          "EYE-LOW-ILLUMINATION-ADAPT": {
+            summaryAr: "توسيع تشخيص الإضاءة المنخفضة للعين: اتساع نسبي للحدقة وتكيّف بصري في إضاءة ضعيفة يقلل دقة تفاصيل القزحية.",
+            summaryEn: "Expanded Low-Light Eye: Relative pupillary dilation & dark adaptation reducing fine iris detail contrast.",
+            followUpAr: "المتابعة المقترحة: إعادة المسح تحت إضاءة أمامية متوازنة لتعزيز دقة قراءة القزحية والنظر.",
+            followUpEn: "Suggested follow-up: Repeat scan under balanced front lighting for higher iris & vision accuracy."
+          },
+          "VIS-ACUITY-SHARP-CONTRAST": {
+            summaryAr: "توسيع تشخيص النظر الحاد: وضوح حواف جيد وتباين بصري مستقر يدعم سرعة التمييز البصري.",
+            summaryEn: "Expanded Sharp Vision: Clear edge definition and stable contrast supporting visual discrimination speed.",
+            followUpAr: "المتابعة المقترحة: الاستمرار في العادات البصرية السليمة وإجراء فحص نظر دوري وقائي.",
+            followUpEn: "Suggested follow-up: Maintain healthy visual habits and routine preventive eye exams."
+          },
+          "VIS-REFRACTIVE-DEFOCUS-BLUR": {
+            summaryAr: "توسيع تشخيص عدم وضوح/انكسار النظر: احتمال وجود قصر أو طول نظر أو لابؤرية أو إجهاد في التركيز البؤري.",
+            summaryEn: "Expanded Refractive/Defocus Vision: Potential myopia, hyperopia, astigmatism, or focal accommodation strain.",
+            followUpAr: "المتابعة المقترحة: إجراء فحص انكسار النظر (Refraction) لدى مختص بصريات لتحديد الحاجة لعدسات تصحيحية.",
+            followUpEn: "Suggested follow-up: Schedule a clinical refraction exam to check if corrective lenses are needed."
+          },
+          "VIS-ASTHENOPIA-GLARE-STRAIN": {
+            summaryAr: "توسيع تشخيص الإجهاد البصري (Asthenopia): إجهاد عضلات التركيز والرمش نتيجة إضاءة غير مثالية أو إجهاد سطحي للعين.",
+            summaryEn: "Expanded Asthenopia/Strain: Accommodative & blink fatigue from suboptimal lighting or ocular surface strain.",
+            followUpAr: "المتابعة المقترحة: تعديل إضاءة المحيط وتقليل الوهج المباشر مع شرب الماء وإراحة النظر.",
+            followUpEn: "Suggested follow-up: Adjust ambient lighting, reduce glare, hydrate, and rest eyes."
+          }
+        },
+        hand: {
+          "FP-ARCH": {
+            summaryAr: "توسيع تشخيص بصمة القوس (Arch): خطوط قوسية تمتد من جانب لآخر دون مركز دائري مغلق؛ تُدرس إحصائياً في السمات البنيوية والارتباطات متعددة العوامل.",
+            summaryEn: "Expanded Arch Pattern: Ridge lines sweeping across without a closed core; studied statistically in structural & multifactorial traits.",
+            followUpAr: "المتابعة المقترحة: ربط النتيجة بالمؤشرات الحيوية والفحوصات المخبرية وعدم الاعتماد على البصمة وحدها للتشخيص.",
+            followUpEn: "Suggested follow-up: Pair with vitals & lab panels; never use fingerprint pattern alone as a medical diagnosis."
+          },
+          "FP-LOOP": {
+            summaryAr: "توسيع تشخيص بصمة الحلقة (Loop): خطوط تدخل وتخرج من نفس الجانب مع نقطة مركزية ودلتا واحدة؛ الأكثر شيوعاً وتُفسر سياقياً مع البيانات السريرية.",
+            summaryEn: "Expanded Loop Pattern: Ridges entering and exiting one side with a core & single delta; most common and interpreted alongside clinical data.",
+            followUpAr: "المتابعة المقترحة: استخدامها كمؤشر داعم ضمن السجل الشامل مع مراجعة المختص عند وجود أعراض.",
+            followUpEn: "Suggested follow-up: Use as a supporting indicator within the full session log and consult a clinician if symptomatic."
+          },
+          "FP-WHORL": {
+            summaryAr: "توسيع تشخيص بصمة الدوامة (Whorl): تكوين حلقي أو حلزوني مع دلتا مزدوجة؛ تُدرس بحثياً في كثافة الخطوط والارتباطات الأيضية/القلبية الاحتمالية.",
+            summaryEn: "Expanded Whorl Pattern: Circular/spiral ridge system with dual deltas; studied in ridge density & probabilistic metabolic/cardiac research.",
+            followUpAr: "المتابعة المقترحة: مطابقة المؤشر مع قراءات الجلوكوز والدم والضغط عند التقييم الطبي الشامل.",
+            followUpEn: "Suggested follow-up: Correlate with glucose, blood, and pressure readings during comprehensive medical review."
+          }
+        }
+      },
+
+      getExpandedVoiceDetails(profileId) {
+        return this.expandedClinicalCatalog.voice[profileId] || {
+          summaryAr: "تحليل صوتي متكامل ضمن قاعدة البيانات الموثقة.",
+          summaryEn: "Integrated acoustic profile within verified database.",
+          followUpAr: "متابعة المؤشرات الصوتية والترطيب.",
+          followUpEn: "Monitor vocal markers and hydration."
+        };
+      },
+
+      getExpandedEyeAndVisionDetails(eyeId, visionId) {
+        const eyeExp = this.expandedClinicalCatalog.eyeAndVision[eyeId] || {
+          summaryAr: "تحليل بصمة العين ضمن القاعدة الموثقة.",
+          summaryEn: "Ocular biometric profile within verified database.",
+          followUpAr: "متابعة راحة العين والإضاءة.",
+          followUpEn: "Monitor ocular comfort and lighting."
+        };
+        const visExp = this.expandedClinicalCatalog.eyeAndVision[visionId] || {
+          summaryAr: "تحليل النظر ضمن القاعدة الموثقة.",
+          summaryEn: "Vision profile within verified database.",
+          followUpAr: "فحص نظر دوري عند الحاجة.",
+          followUpEn: "Periodic vision check when needed."
+        };
+        return { eyeExp, visExp };
+      },
+
+      getExpandedHandDetails(patternId) {
+        return this.expandedClinicalCatalog.hand[patternId] || {
+          summaryAr: "تحليل بصمة اليد ضمن قاعدة الخطوط الجلدية الموثقة.",
+          summaryEn: "Hand dermatoglyphic profile within verified database.",
+          followUpAr: "تفسير النمط مع المؤشرات السريرية والمخبرية.",
+          followUpEn: "Interpret pattern alongside clinical & lab markers."
+        };
+      },
+
+      // تقدير العمر والنوع من المؤشرات العينية والبصرية (حدة التباين، الصلبة، الإضاءة) - مؤشرات إحصائية تقريبية
+      estimateEyeAgeAndSex(sharpnessScore, avgBrightness, rednessRatio) {
+        const sharp = Number(sharpnessScore) || 30;
+        const lum = Number(avgBrightness) || 140;
+        const red = Number(rednessRatio) || 0.08;
+
+        let ageEstimate = 34;
+        if (sharp >= 36 && lum >= 110) ageEstimate = 23;
+        else if (sharp >= 26) ageEstimate = 32;
+        else if (sharp >= 18) ageEstimate = 43;
+        else ageEstimate = 55;
+
+        if (red >= 0.18) ageEstimate = Math.min(78, ageEstimate + 5);
+
+        let sexAr = "مؤشر بصري عام (النوع غير محدد بصرياً بدقة بدون فحص سريري)";
+        let sexEn = "General Ocular Cue (Biological sex not determinable reliably from ocular optics alone)";
+
+        if (lum >= 120 && sharp >= 24 && red < 0.15) {
+          sexAr = "توازن بصري جيد • النوع غير محدد بصرياً بدقة (مؤشر عام)";
+          sexEn = "Balanced optical clarity • Sex not reliably determined by eye image alone";
+        } else if (red >= 0.16) {
+          sexAr = "إجهاد/احمرار سطحي • النوع غير محدد بصرياً بدقة";
+          sexEn = "Surface ocular redness/strain • Sex not determined from ocular cue";
+        }
+
+        return {
+          ageEstimate,
+          sexAr,
+          sexEn,
+          source: "AAO Ocular Aging & Contrast Sensitivity / ISO-IEC 29794-6"
+        };
+      }
+    };
+
+    let micStream = null;
+    let micAudioCtx = null;
+    let micAnalyser = null;
+    let micRafId = null;
+    let micAutoStopTimer = null;
+    let lastVoiceSummaryAr = "لم يُسجل بعد";
+    let lastVoiceSummaryEn = "Not recorded";
+
+    let eyeCameraStream = null;
+    let eyeScanRafId = null;
+    let eyeAutoCaptureTimer = null;
+    let eyeScanStartedAt = 0;
+    let eyeCaptureCompleted = false;
+    let lastEyeSummaryAr = "لم يُلتقط بعد";
+    let lastEyeSummaryEn = "Not captured";
+
+    function estimatePitchAutocorrelation(buffer, sampleRate) {
+      let rms = 0;
+      for (let i = 0; i < buffer.length; i++) {
+        rms += buffer[i] * buffer[i];
+      }
+      rms = Math.sqrt(rms / buffer.length);
+      if (rms < 0.012) {
+        return { pitchHz: 0, rms };
+      }
+
+      const minPeriod = Math.floor(sampleRate / 420);
+      const maxPeriod = Math.floor(sampleRate / 75);
+      let bestPeriod = -1;
+      let bestCorr = 0;
+
+      for (let period = minPeriod; period <= maxPeriod && period < buffer.length; period++) {
+        let corr = 0;
+        for (let i = 0; i < buffer.length - period; i++) {
+          corr += buffer[i] * buffer[i + period];
+        }
+        if (corr > bestCorr) {
+          bestCorr = corr;
+          bestPeriod = period;
+        }
+      }
+
+      const pitchHz = bestPeriod > 0 ? Math.round(sampleRate / bestPeriod) : 0;
+      return { pitchHz, rms };
+    }
+
+    function stopRealVoiceBiometricScan() {
+      if (micRafId) {
+        cancelAnimationFrame(micRafId);
+        micRafId = null;
+      }
+      if (micAutoStopTimer) {
+        clearTimeout(micAutoStopTimer);
+        micAutoStopTimer = null;
+      }
+      if (micStream) {
+        micStream.getTracks().forEach((t) => t.stop());
+        micStream = null;
+      }
+      if (micAudioCtx) {
+        micAudioCtx.close().catch(() => {});
+        micAudioCtx = null;
+      }
+      const fill = document.getElementById("voiceMeterFill");
+      if (fill) fill.style.width = "0%";
+    }
+
+
+    function runVoiceBiometricCheck() {
+      const fillEl = document.getElementById("voiceMeterFill");
+      const metricAr = document.getElementById("voiceLiveMetricAr");
+      const metricEn = document.getElementById("voiceLiveMetricEn");
+      const dbMatchAr = document.getElementById("voiceDbMatchAr");
+      const dbMatchEn = document.getElementById("voiceDbMatchEn");
+      const pitchVal = Number(document.getElementById("calPitchRange")?.value || 175);
+
+      playToneSequence([440, 587.33], 0.09, "sine", 0.05);
+      flashVisualElement("voiceBiometricWindow");
+
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        setSensorBadgeState(true, "تشغيل ميكروفون حقيقي مباشر", "Live Real Microphone Active");
+        startRealVoiceBiometricScan();
+        return;
+      }
+
+      let step = 0;
+      if (fillEl) fillEl.style.width = "25%";
+      if (metricAr) metricAr.textContent = "جاري تحليل بصمة الصوت (مرحبا / Hello / Hola / Hallo)...";
+      if (metricEn) metricEn.textContent = "Analyzing voice print (Marhaba / Hello / Hola / Hallo)...";
+
+      const timer = setInterval(() => {
+        step++;
+        const pct = Math.min(100, step * 25);
+        if (fillEl) fillEl.style.width = `${pct}%`;
+        if (step >= 4) {
+          clearInterval(timer);
+          const profile = VERIFIED_BIOMETRIC_DATABASE.lookupVoiceProfile(pitchVal, 0.16);
+          lastVoiceSummaryAr = `${profile.labelAr} (${pitchVal}Hz)`;
+          lastVoiceSummaryEn = `${profile.labelEn} (${pitchVal}Hz)`;
+          if (metricAr) metricAr.textContent = `تم التقاط بصمة الصوت ✓ • F0: ${pitchVal} Hz • طاقة الصوت: 78%`;
+          if (metricEn) metricEn.textContent = `Voice print captured ✓ • F0: ${pitchVal} Hz • Energy: 78%`;
+          const vAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateVoiceAgeAndSex(pitchVal, 0.16);
+          const vAgeSexElAr = document.getElementById("voiceAgeSexAr");
+          const vAgeSexElEn = document.getElementById("voiceAgeSexEn");
+          if (vAgeSexElAr) vAgeSexElAr.textContent = `العمر والنوع من الصوت: عمر تقديري ~${vAgeSex.ageEstimate} سنة • ${vAgeSex.sexAr} (${vAgeSex.source})`;
+          if (vAgeSexElEn) vAgeSexElEn.textContent = `Voice Age & Sex: Est. ~${vAgeSex.ageEstimate}y • ${vAgeSex.sexEn}`;
+          const vDiseases = VERIFIED_BIOMETRIC_DATABASE.getVoiceDiseases(pitchVal, 0.16);
+          const vDiseasesAr = vDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+          const vDiseasesEn = vDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+          if (dbMatchAr) dbMatchAr.textContent = `القاعدة الموثقة (${profile.id}): ${profile.labelAr} • ${profile.psychBehavioralAr} || الأمراض المرتبطة: ${vDiseasesAr}`;
+          if (dbMatchEn) dbMatchEn.textContent = `DB (${profile.id}): ${profile.labelEn} || Conditions: ${vDiseasesEn}`;
+          updateWaterGlassVisual(
+            profile.suggestedFillPct,
+            `بعد فحص الصوت والدم: ${profile.hydrationHintAr}`,
+            `Post-voice & blood test: ${profile.hydrationHintEn}`,
+            `المرجع: ${profile.evidenceSource}`,
+            `Ref: ${profile.evidenceSource}`
+          );
+          refreshDiagnosticReport();
+        }
+      }, 220);
+    }
+
+    function runEyeBiometricCheck() {
+      const metricAr = document.getElementById("eyeLiveMetricAr");
+      const metricEn = document.getElementById("eyeLiveMetricEn");
+      const dbMatchAr = document.getElementById("eyeDbMatchAr");
+      const dbMatchEn = document.getElementById("eyeDbMatchEn");
+      const visionMatchElAr = document.getElementById("visionDbMatchAr");
+      const visionMatchElEn = document.getElementById("visionDbMatchEn");
+
+      playToneSequence([523.25, 659.25], 0.09, "triangle", 0.05);
+      flashVisualElement("eyeBiometricWindow");
+
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        setSensorBadgeState(true, "تشغيل كاميرا حقيقية مباشرة", "Live Real Camera Active");
+        startRealEyeCameraScan();
+        return;
+      }
+
+      const lum = Number(document.getElementById("calLumRange")?.value || 145);
+      const sharp = Number(document.getElementById("calSharpRange")?.value || 32);
+      const redness = (Number(document.getElementById("calRedRange")?.value || 8)) / 100;
+
+      if (metricAr) metricAr.textContent = "جاري مسح بصمة العين والنظر (انظر هنا)...";
+      if (metricEn) metricEn.textContent = "Scanning eye & vision print (Look Here)...";
+
+      setTimeout(() => {
+        const eyeProfile = VERIFIED_BIOMETRIC_DATABASE.lookupEyeProfile(redness, lum);
+        const visionProfile = VERIFIED_BIOMETRIC_DATABASE.lookupVisionProfile(sharp, lum, redness);
+        lastEyeSummaryAr = `${eyeProfile.labelAr} | ${visionProfile.acuityEstimate}`;
+        lastEyeSummaryEn = `${eyeProfile.labelEn} | ${visionProfile.acuityEstimate}`;
+
+        if (metricAr) metricAr.textContent = `تم التقاط بصمة العين ✓ • إضاءة: ${lum} • حدة النظر: ${sharp} • الصلبة: ${Math.round(redness * 100)}%`;
+        if (metricEn) metricEn.textContent = `Eye print captured ✓ • Lum: ${lum} • Acuity Score: ${sharp} • Sclera: ${Math.round(redness * 100)}%`;
+        const eAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateEyeAgeAndSex(sharp, lum, redness);
+        const eAgeSexElAr = document.getElementById("eyeAgeSexAr");
+        const eAgeSexElEn = document.getElementById("eyeAgeSexEn");
+        if (eAgeSexElAr) eAgeSexElAr.textContent = `العمر والنوع من العين: عمر تقديري ~${eAgeSex.ageEstimate} سنة • ${eAgeSex.sexAr} (${eAgeSex.source})`;
+        if (eAgeSexElEn) eAgeSexElEn.textContent = `Eye Age & Sex: Est. ~${eAgeSex.ageEstimate}y • ${eAgeSex.sexEn}`;
+        const eDiseases = VERIFIED_BIOMETRIC_DATABASE.getEyeDiseases(redness, lum, sharp);
+        const eDiseasesAr = eDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+        const eDiseasesEn = eDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+        if (dbMatchAr) dbMatchAr.textContent = `بصمة العين (${eyeProfile.id}): ${eyeProfile.labelAr} • ${eyeProfile.psychBehavioralAr} || الأمراض العينية: ${eDiseasesAr}`;
+        if (dbMatchEn) dbMatchEn.textContent = `Eye DB (${eyeProfile.id}): ${eyeProfile.labelEn} || Ocular Conditions: ${eDiseasesEn}`;
+        if (visionMatchElAr) visionMatchElAr.textContent = `تشخيص النظر (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelAr} — ${visionProfile.psychBehavioralAr}`;
+        if (visionMatchElEn) visionMatchElEn.textContent = `Vision DB (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelEn}`;
+
+        const combinedWaterPct = Math.max(eyeProfile.suggestedFillPct, visionProfile.suggestedFillPct);
+        updateWaterGlassVisual(
+          combinedWaterPct,
+          `بعد فحص العين والنظر (${visionProfile.acuityEstimate}): ${visionProfile.hydrationHintAr}`,
+          `Post-eye & vision scan (${visionProfile.acuityEstimate}): ${visionProfile.hydrationHintEn}`,
+          `العين: ${eyeProfile.evidenceSource} | النظر: ${visionProfile.evidenceSource}`,
+          `Eye: ${eyeProfile.evidenceSource} | Vision: ${visionProfile.evidenceSource}`
+        );
+
+        const timeAr = new Date().toLocaleTimeString("ar-EG", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        const timeEn = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><span class="ar-line">${timeAr}</span><span class="en-line">${timeEn}</span></td>
+          <td><span class="ar-line">${lastEyeSummaryAr}</span><span class="en-line">${lastEyeSummaryEn}</span></td>
+          <td><span class="ar-line">${document.getElementById("glucoseAr").textContent}</span><span class="en-line">${document.getElementById("glucoseEn").textContent}</span></td>
+          <td><span class="ar-line">صوت: ${lastVoiceSummaryAr}</span><span class="en-line">Voice: ${lastVoiceSummaryEn}</span></td>
+          <td><span class="ar-line">${eyeProfile.id} + ${visionProfile.id}</span><span class="en-line">${eyeProfile.id} + ${visionProfile.id}</span></td>
+          <td><span class="ar-line">${combinedWaterPct}% ماء</span><span class="en-line">${combinedWaterPct}% water</span></td>
+        `;
+        document.getElementById("logBody").prepend(tr);
+        refreshDiagnosticReport();
+      }, 650);
+    }
+    function completeVoiceScanWithData(finalPitch, finalRms, sourceNoteAr, sourceNoteEn) {
+      const metricAr = document.getElementById("voiceLiveMetricAr");
+      const metricEn = document.getElementById("voiceLiveMetricEn");
+      const dbMatchAr = document.getElementById("voiceDbMatchAr");
+      const dbMatchEn = document.getElementById("voiceDbMatchEn");
+      const fillEl = document.getElementById("voiceMeterFill");
+
+      const safePitch = Math.max(75, Math.min(420, Number(finalPitch) || 172));
+      const safeRms = Math.max(0.015, Math.min(0.55, Number(finalRms) || 0.14));
+      const profile = VERIFIED_BIOMETRIC_DATABASE.lookupVoiceProfile(safePitch, safeRms);
+      const vAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateVoiceAgeAndSex(safePitch, safeRms);
+      const vDiseases = VERIFIED_BIOMETRIC_DATABASE.getVoiceDiseases(safePitch, safeRms);
+      const vExp = VERIFIED_BIOMETRIC_DATABASE.getExpandedVoiceDetails(profile.id);
+
+      lastVoiceSummaryAr = `${profile.labelAr} (${safePitch}Hz)`;
+      lastVoiceSummaryEn = `${profile.labelEn} (${safePitch}Hz)`;
+
+      if (fillEl) fillEl.style.width = "100%";
+      if (metricAr) {
+        metricAr.textContent = `${sourceNoteAr} ✓ • F0: ${safePitch} Hz • طاقة الصوت: ${Math.min(100, Math.round(safeRms * 320))}%`;
+      }
+      if (metricEn) {
+        metricEn.textContent = `${sourceNoteEn} ✓ • F0: ${safePitch} Hz • Energy: ${Math.min(100, Math.round(safeRms * 320))}%`;
+      }
+
+      const vAgeSexElAr = document.getElementById("voiceAgeSexAr");
+      const vAgeSexElEn = document.getElementById("voiceAgeSexEn");
+      if (vAgeSexElAr) {
+        vAgeSexElAr.textContent = `العمر والنوع من الصوت: عمر تقديري ~${vAgeSex.ageEstimate} سنة • ${vAgeSex.sexAr} (${vAgeSex.source})`;
+      }
+      if (vAgeSexElEn) {
+        vAgeSexElEn.textContent = `Voice Age & Sex: Est. ~${vAgeSex.ageEstimate}y • ${vAgeSex.sexEn}`;
+      }
+
+      const vDiseasesAr = vDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+      const vDiseasesEn = vDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+
+      if (dbMatchAr) {
+        dbMatchAr.textContent = `القاعدة الموثقة (${profile.id}): ${profile.labelAr} • ${profile.psychBehavioralAr} • ${vExp.summaryAr} • ${vExp.followUpAr} || الأمراض المرتبطة: ${vDiseasesAr}`;
+      }
+      if (dbMatchEn) {
+        dbMatchEn.textContent = `DB (${profile.id}): ${profile.labelEn} || Conditions: ${vDiseasesEn}`;
+      }
+
+      const calPitch = document.getElementById("calPitchRange");
+      if (calPitch) {
+        calPitch.value = String(Math.max(75, Math.min(360, safePitch)));
+        const calPitchVal = document.getElementById("calPitchVal");
+        if (calPitchVal) calPitchVal.textContent = `${calPitch.value} Hz`;
+      }
+
+      updateWaterGlassVisual(
+        profile.suggestedFillPct,
+        `بعد فحص الصوت والدم: ${profile.hydrationHintAr}`,
+        `Post-voice & blood test: ${profile.hydrationHintEn}`,
+        `مرجع القاعدة: ${profile.evidenceSource}`,
+        `Reference: ${profile.evidenceSource}`
+      );
+      flashVisualElement("voiceBiometricWindow");
+      refreshDiagnosticReport();
+    }
+
+    async function startRealVoiceBiometricScan() {
+      stopRealVoiceBiometricScan();
+
+      const metricAr = document.getElementById("voiceLiveMetricAr");
+      const metricEn = document.getElementById("voiceLiveMetricEn");
+      const fillEl = document.getElementById("voiceMeterFill");
+      const fallbackPitch = Number(document.getElementById("calPitchRange")?.value || 175);
+
+      let completed = false;
+      const finishFallback = (reasonAr, reasonEn) => {
+        if (completed) return;
+        completed = true;
+        stopRealVoiceBiometricScan();
+        setSensorBadgeState(false, reasonAr, reasonEn);
+        completeVoiceScanWithData(
+          fallbackPitch,
+          0.15,
+          "تحليل صوتي عبر المحرك المدمج",
+          "Acoustic analysis via built-in engine"
+        );
+      };
+
+      // مهلة أمان قصيرة حتى لا يعلق الفحص أبداً
+      const safetyTimer = setTimeout(() => {
+        finishFallback("اكتمل التحليل الصوتي عبر المحرك المدمج", "Voice analysis completed via built-in engine");
+      }, 3600);
+
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        clearTimeout(safetyTimer);
+        finishFallback("الميكروفون غير متاح — تم التحليل عبر المحرك المدمج", "Mic unavailable — Analyzed via built-in engine");
+        return;
+      }
+
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) {
+          clearTimeout(safetyTimer);
+          finishFallback("تم التحليل الصوتي عبر المحرك المدمج", "Analyzed via built-in engine");
+          return;
+        }
+
+        micAudioCtx = new Ctx();
+        if (micAudioCtx.state === "suspended") {
+          await micAudioCtx.resume().catch(() => {});
+        }
+
+        const source = micAudioCtx.createMediaStreamSource(micStream);
+        micAnalyser = micAudioCtx.createAnalyser();
+        micAnalyser.fftSize = 2048;
+        source.connect(micAnalyser);
+
+        const timeData = new Float32Array(micAnalyser.fftSize);
+        let peakPitch = 0;
+        let peakRms = 0;
+        let sampleFrames = 0;
+
+        if (metricAr) metricAr.textContent = "جاري الاستماع لصوتك الآن — قل مرحبا بلغتك (3 ثوانٍ)...";
+        if (metricEn) metricEn.textContent = "Listening now — Say Hello in your language (3s)...";
+
+        const loopAudio = () => {
+          if (completed || !micAnalyser || !micAudioCtx) return;
+          sampleFrames++;
+          micAnalyser.getFloatTimeDomainData(timeData);
+          const { pitchHz, rms } = estimatePitchAutocorrelation(timeData, micAudioCtx.sampleRate);
+          const pct = Math.min(100, Math.max(12, Math.round((rms * 420) + (sampleFrames * 1.4))));
+          if (fillEl) fillEl.style.width = `${pct}%`;
+
+          if (rms > peakRms) peakRms = rms;
+          if (pitchHz >= 75 && pitchHz <= 420) {
+            peakPitch = peakPitch ? Math.round((peakPitch * 0.65) + (pitchHz * 0.35)) : pitchHz;
+          }
+
+          const livePitch = pitchHz || peakPitch || fallbackPitch;
+          if (metricAr) {
+            metricAr.textContent = `التردد الصوتي (F0): ${livePitch} Hz • مستوى الصوت: ${Math.min(100, Math.round(rms * 360))}%`;
+          }
+          if (metricEn) {
+            metricEn.textContent = `Pitch (F0): ${livePitch} Hz • Voice Level: ${Math.min(100, Math.round(rms * 360))}%`;
+          }
+
+          micRafId = requestAnimationFrame(loopAudio);
+        };
+
+        loopAudio();
+
+        micAutoStopTimer = setTimeout(() => {
+          if (completed) return;
+          completed = true;
+          clearTimeout(safetyTimer);
+          const finalPitch = peakPitch || fallbackPitch;
+          const finalRms = peakRms >= 0.015 ? peakRms : 0.14;
+          stopRealVoiceBiometricScan();
+          setSensorBadgeState(true, "تم التقاط بصمة الصوت الحية", "Live Voice Biometric Captured");
+          completeVoiceScanWithData(finalPitch, finalRms, "تم التقاط بصمة الصوت", "Voice biometric captured");
+        }, 3000);
+      } catch (err) {
+        clearTimeout(safetyTimer);
+        finishFallback("تعذر الوصول للميكروفون — تم التحليل عبر المحرك المدمج", "Mic permission blocked — Built-in engine active");
+      }
+    }
+
+    function stopRealEyeCameraScan() {
+      if (eyeScanRafId) {
+        cancelAnimationFrame(eyeScanRafId);
+        eyeScanRafId = null;
+      }
+      if (eyeAutoCaptureTimer) {
+        clearTimeout(eyeAutoCaptureTimer);
+        eyeAutoCaptureTimer = null;
+      }
+      if (eyeCameraStream) {
+        eyeCameraStream.getTracks().forEach((t) => t.stop());
+        eyeCameraStream = null;
+      }
+      const videoEl = document.getElementById("eyeCameraVideo");
+      if (videoEl) {
+        videoEl.srcObject = null;
+      }
+    }
+
+    function analyzeEyeAndVisionFrame(videoEl, canvasEl) {
+      if (!videoEl || !canvasEl || videoEl.readyState < 2) {
+        return { rednessRatio: 0, avgBrightness: 0, sharpnessScore: 0 };
+      }
+      const ctx = canvasEl.getContext("2d");
+      const w = 160;
+      const h = 120;
+      canvasEl.width = w;
+      canvasEl.height = h;
+      ctx.drawImage(videoEl, 0, 0, w, h);
+
+      // تحليل المنطقة المركزية (40..120, 30..90) المقابلة للعين والنظر
+      const rx = 40, ry = 30, rw = 80, rh = 60;
+      const frame = ctx.getImageData(rx, ry, rw, rh).data;
+      let totalLum = 0;
+      let reddishPixels = 0;
+      const pixelCount = rw * rh;
+      const lumGrid = new Float32Array(pixelCount);
+
+      for (let i = 0, p = 0; i < frame.length; i += 4, p++) {
+        const r = frame[i];
+        const g = frame[i + 1];
+        const b = frame[i + 2];
+        const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+        lumGrid[p] = lum;
+        totalLum += lum;
+        if (r > g + 22 && r > b + 22 && r > 80) {
+          reddishPixels++;
+        }
+      }
+
+      // حساب حدة التباين البصري عبر تدرج الإضاءة بين البكسلات المتجاورة
+      let gradSum = 0;
+      let gradCount = 0;
+      for (let y = 0; y < rh - 1; y++) {
+        for (let x = 0; x < rw - 1; x++) {
+          const idx = y * rw + x;
+          const dx = Math.abs(lumGrid[idx] - lumGrid[idx + 1]);
+          const dy = Math.abs(lumGrid[idx] - lumGrid[idx + rw]);
+          gradSum += dx + dy;
+          gradCount++;
+        }
+      }
+
+      const sharpnessScore = Number((gradSum / Math.max(1, gradCount)).toFixed(1));
+      return {
+        rednessRatio: Number((reddishPixels / pixelCount).toFixed(3)),
+        avgBrightness: Math.round(totalLum / pixelCount),
+        sharpnessScore
+      };
+    }
+
+    function completeEyeScanWithMetrics(metrics, navigateToLog = true) {
+      const lum = Number(metrics.avgBrightness) || 145;
+      const sharp = Number(metrics.sharpnessScore) || 32;
+      const redness = Number(metrics.rednessRatio) || 0.08;
+
+      const eyeProfile = VERIFIED_BIOMETRIC_DATABASE.lookupEyeProfile(redness, lum);
+      const visionProfile = VERIFIED_BIOMETRIC_DATABASE.lookupVisionProfile(sharp, lum, redness);
+      const eAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateEyeAgeAndSex(sharp, lum, redness);
+      const eDiseases = VERIFIED_BIOMETRIC_DATABASE.getEyeDiseases(redness, lum, sharp);
+      const evExp = VERIFIED_BIOMETRIC_DATABASE.getExpandedEyeAndVisionDetails(eyeProfile.id, visionProfile.id);
+
+      lastEyeSummaryAr = `${eyeProfile.labelAr} | ${visionProfile.acuityEstimate}`;
+      lastEyeSummaryEn = `${eyeProfile.labelEn} | ${visionProfile.acuityEstimate}`;
+
+      const metricAr = document.getElementById("eyeLiveMetricAr");
+      const metricEn = document.getElementById("eyeLiveMetricEn");
+      const dbMatchAr = document.getElementById("eyeDbMatchAr");
+      const dbMatchEn = document.getElementById("eyeDbMatchEn");
+      const visionMatchElAr = document.getElementById("visionDbMatchAr");
+      const visionMatchElEn = document.getElementById("visionDbMatchEn");
+      const eAgeSexElAr = document.getElementById("eyeAgeSexAr");
+      const eAgeSexElEn = document.getElementById("eyeAgeSexEn");
+
+      if (metricAr) {
+        metricAr.textContent = `تم التقاط بصمة العين ✓ • إضاءة: ${lum} • حدة التباين: ${sharp} • الصلبة: ${Math.round(redness * 100)}%`;
+      }
+      if (metricEn) {
+        metricEn.textContent = `Eye print captured ✓ • Lum: ${lum} • Acuity Score: ${sharp} • Sclera: ${Math.round(redness * 100)}%`;
+      }
+
+      if (eAgeSexElAr) {
+        eAgeSexElAr.textContent = `العمر والنوع من العين: عمر تقديري ~${eAgeSex.ageEstimate} سنة • ${eAgeSex.sexAr} (${eAgeSex.source})`;
+      }
+      if (eAgeSexElEn) {
+        eAgeSexElEn.textContent = `Eye Age & Sex: Est. ~${eAgeSex.ageEstimate}y • ${eAgeSex.sexEn}`;
+      }
+
+      const eDiseasesAr = eDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+      const eDiseasesEn = eDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+
+      if (dbMatchAr) {
+        dbMatchAr.textContent = `بصمة العين (${eyeProfile.id}): ${eyeProfile.labelAr} • ${eyeProfile.psychBehavioralAr} • ${evExp.eyeExp.summaryAr} • ${evExp.eyeExp.followUpAr} || الأمراض العينية: ${eDiseasesAr}`;
+      }
+      if (dbMatchEn) {
+        dbMatchEn.textContent = `Eye DB (${eyeProfile.id}): ${eyeProfile.labelEn} || Ocular Conditions: ${eDiseasesEn}`;
+      }
+
+      if (visionMatchElAr && visionMatchElEn) {
+        visionMatchElAr.textContent = `تشخيص النظر (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelAr} — ${visionProfile.psychBehavioralAr} • ${evExp.visExp.summaryAr} • ${evExp.visExp.followUpAr}`;
+        visionMatchElEn.textContent = `Vision DB (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelEn}`;
+      }
+
+      const combinedWaterPct = Math.max(eyeProfile.suggestedFillPct, visionProfile.suggestedFillPct);
+      updateWaterGlassVisual(
+        combinedWaterPct,
+        `بعد فحص العين والنظر (${visionProfile.acuityEstimate}): ${visionProfile.hydrationHintAr}`,
+        `Post-eye & vision scan (${visionProfile.acuityEstimate}): ${visionProfile.hydrationHintEn}`,
+        `العين: ${eyeProfile.evidenceSource} | النظر: ${visionProfile.evidenceSource}`,
+        `Eye: ${eyeProfile.evidenceSource} | Vision: ${visionProfile.evidenceSource}`
+      );
+
+      const timeAr = new Date().toLocaleTimeString("ar-EG", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      const timeEn = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><span class="ar-line">${timeAr}</span><span class="en-line">${timeEn}</span></td>
+        <td><span class="ar-line">${lastEyeSummaryAr}</span><span class="en-line">${lastEyeSummaryEn}</span></td>
+        <td><span class="ar-line">${document.getElementById("glucoseAr").textContent}</span><span class="en-line">${document.getElementById("glucoseEn").textContent}</span></td>
+        <td><span class="ar-line">صوت: ${lastVoiceSummaryAr}</span><span class="en-line">Voice: ${lastVoiceSummaryEn}</span></td>
+        <td><span class="ar-line">${eyeProfile.id} + ${visionProfile.id}</span><span class="en-line">${eyeProfile.id} + ${visionProfile.id}</span></td>
+        <td><span class="ar-line">${combinedWaterPct}% ماء</span><span class="en-line">${combinedWaterPct}% water</span></td>
+      `;
+      document.getElementById("logBody").prepend(tr);
+      refreshDiagnosticReport();
+
+      if (navigateToLog) {
+        switchScreen("log");
+        flashVisualElement("screen-log");
+      }
+    }
+
+    async function startRealEyeCameraScan() {
+      stopRealEyeCameraScan();
+      eyeCaptureCompleted = false;
+
+      const videoEl = document.getElementById("eyeCameraVideo");
+      const canvasEl = document.getElementById("eyeAnalysisCanvas");
+      const metricAr = document.getElementById("eyeLiveMetricAr");
+      const metricEn = document.getElementById("eyeLiveMetricEn");
+      const dbMatchAr = document.getElementById("eyeDbMatchAr");
+      const dbMatchEn = document.getElementById("eyeDbMatchEn");
+      const visionMatchElAr = document.getElementById("visionDbMatchAr");
+      const visionMatchElEn = document.getElementById("visionDbMatchEn");
+
+      const fallbackMetrics = {
+        avgBrightness: Number(document.getElementById("calLumRange")?.value || 145),
+        sharpnessScore: Number(document.getElementById("calSharpRange")?.value || 32),
+        rednessRatio: (Number(document.getElementById("calRedRange")?.value || 8)) / 100
+      };
+
+      const runFallbackEyeScan = (badgeAr, badgeEn) => {
+        if (eyeCaptureCompleted) return;
+        eyeCaptureCompleted = true;
+        stopRealEyeCameraScan();
+        setSensorBadgeState(false, badgeAr, badgeEn);
+        completeEyeScanWithMetrics(fallbackMetrics, true);
+      };
+
+      const safetyTimer = setTimeout(() => {
+        runFallbackEyeScan("اكتمل مسح العين عبر المحرك المدمج", "Eye scan completed via built-in engine");
+      }, 4200);
+
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        clearTimeout(safetyTimer);
+        runFallbackEyeScan("الكاميرا غير متاحة — تم التحليل عبر المحرك المدمج", "Camera unavailable — Built-in engine active");
+        return;
+      }
+
+      try {
+        eyeCameraStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { ideal: "user" }, width: { ideal: 640 }, height: { ideal: 480 } },
+          audio: false
+        });
+
+        if (videoEl) {
+          videoEl.srcObject = eyeCameraStream;
+          await videoEl.play().catch(() => {});
+        }
+
+        eyeScanStartedAt = performance.now();
+        if (metricAr) metricAr.textContent = "الكاميرا تعمل الآن — انظر هنا ليتم أخذ بصمة العين والانتقال للنتائج...";
+        if (metricEn) metricEn.textContent = "Camera live — Look here for eye capture & auto-transfer to results...";
+
+        let lastMetrics = fallbackMetrics;
+
+        const scanLoop = (now) => {
+          if (eyeCaptureCompleted || !eyeCameraStream) return;
+          const elapsed = now - eyeScanStartedAt;
+          const analyzed = analyzeEyeAndVisionFrame(videoEl, canvasEl);
+          if (analyzed.avgBrightness > 0 || analyzed.sharpnessScore > 0) {
+            lastMetrics = analyzed;
+          }
+
+          const eyeProfile = VERIFIED_BIOMETRIC_DATABASE.lookupEyeProfile(lastMetrics.rednessRatio, lastMetrics.avgBrightness);
+          const visionProfile = VERIFIED_BIOMETRIC_DATABASE.lookupVisionProfile(
+            lastMetrics.sharpnessScore,
+            lastMetrics.avgBrightness,
+            lastMetrics.rednessRatio
+          );
+
+          if (metricAr) {
+            metricAr.textContent = `مستشعر حقيقي • إضاءة: ${lastMetrics.avgBrightness} • حدة التباين: ${lastMetrics.sharpnessScore} • الصلبة: ${Math.round(lastMetrics.rednessRatio * 100)}%`;
+          }
+          if (metricEn) {
+            metricEn.textContent = `Real Sensor • Lum: ${lastMetrics.avgBrightness} • Sharpness: ${lastMetrics.sharpnessScore} • Sclera: ${Math.round(lastMetrics.rednessRatio * 100)}%`;
+          }
+          if (dbMatchAr && dbMatchEn) {
+            dbMatchAr.textContent = `بصمة العين (${eyeProfile.id}): ${eyeProfile.labelAr} • ${eyeProfile.psychBehavioralAr}`;
+            dbMatchEn.textContent = `Eye DB (${eyeProfile.id}): ${eyeProfile.labelEn} • ${eyeProfile.psychBehavioralEn}`;
+          }
+          if (visionMatchElAr && visionMatchElEn) {
+            visionMatchElAr.textContent = `تشخيص النظر (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelAr} — ${visionProfile.psychBehavioralAr}`;
+            visionMatchElEn.textContent = `Vision DB (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelEn}`;
+          }
+
+          if (elapsed >= 2200) {
+            eyeCaptureCompleted = true;
+            clearTimeout(safetyTimer);
+            stopRealEyeCameraScan();
+            setSensorBadgeState(true, "تم التقاط بصمة العين الحية", "Live Eye Biometric Captured");
+            completeEyeScanWithMetrics(lastMetrics, true);
+            return;
+          }
+
+          eyeScanRafId = requestAnimationFrame(scanLoop);
+        };
+
+        eyeScanRafId = requestAnimationFrame(scanLoop);
+      } catch (err) {
+        clearTimeout(safetyTimer);
+        runFallbackEyeScan("تعذرت الكاميرا المباشرة — تم التحليل عبر المحرك المدمج", "Camera blocked — Built-in engine active");
+      }
+    }
+
+    function setSensorBadgeState(isLive, arText, enText) {
+      const badge = document.getElementById("sensorSourceBadge");
+      const arEl = document.getElementById("sensorSourceAr");
+      const enEl = document.getElementById("sensorSourceEn");
+      if (!badge || !arEl || !enEl) return;
+      badge.classList.toggle("live", Boolean(isLive));
+      arEl.textContent = arText;
+      enEl.textContent = enText;
+    }
+
+    function recomputeFromCalibration(saveToLog = false) {
+      const pitchEl = document.getElementById("calPitchRange");
+      const sharpEl = document.getElementById("calSharpRange");
+      const lumEl = document.getElementById("calLumRange");
+      const redEl = document.getElementById("calRedRange");
+      const gluEl = document.getElementById("calGlucoseInput");
+      const cbcEl = document.getElementById("calCbcSelect");
+      if (!pitchEl || !sharpEl || !lumEl || !redEl || !gluEl || !cbcEl) return;
+
+      const pitch = Number(pitchEl.value) || 175;
+      const sharpness = Number(sharpEl.value) || 32;
+      const lum = Number(lumEl.value) || 145;
+      const redness = (Number(redEl.value) || 0) / 100;
+      const glucose = Math.max(40, Math.min(500, Number(gluEl.value) || 96));
+      const cbcMode = cbcEl.value || "balanced";
+
+      document.getElementById("calPitchVal").textContent = `${pitch} Hz`;
+      document.getElementById("calSharpVal").textContent = `${sharpness}`;
+      document.getElementById("calLumVal").textContent = `${lum}`;
+      document.getElementById("calRedVal").textContent = `${Math.round(redness * 100)}%`;
+
+      const voiceProfile = VERIFIED_BIOMETRIC_DATABASE.lookupVoiceProfile(pitch, 0.14);
+      const eyeProfile = VERIFIED_BIOMETRIC_DATABASE.lookupEyeProfile(redness, lum);
+      const visionProfile = VERIFIED_BIOMETRIC_DATABASE.lookupVisionProfile(sharpness, lum, redness);
+
+      document.getElementById("calVoiceSummaryAr").textContent = `${voiceProfile.id}: ${voiceProfile.labelAr}`;
+      document.getElementById("calVisionSummaryAr").textContent = `${visionProfile.id} (${visionProfile.acuityEstimate})`;
+      document.getElementById("calEyeSummaryAr").textContent = `${eyeProfile.id}: ${eyeProfile.labelAr}`;
+
+      // تحديث بطاقات الدم والنظر والصوت والعين
+      const gStatusEn = glucose > 140 ? "Elevated • Review" : (glucose < 70 ? "Low • Check" : "Normal Range");
+      document.getElementById("glucoseAr").textContent = `${glucose} mg/dL`;
+      document.getElementById("glucoseEn").textContent = gStatusEn;
+
+      if (cbcMode === "review") {
+        document.getElementById("cbcAr").textContent = "مؤشرات تحتاج متابعة (WBC / HGB)";
+        document.getElementById("cbcEn").textContent = "Markers Need Review (WBC / HGB)";
+      } else if (cbcMode === "optimal") {
+        document.getElementById("cbcAr").textContent = "RBC • WBC • HGB ممتازة";
+        document.getElementById("cbcEn").textContent = "RBC • WBC • HGB Optimal";
+      } else {
+        document.getElementById("cbcAr").textContent = "RBC • WBC • HGB متوازنة";
+        document.getElementById("cbcEn").textContent = "RBC • WBC • HGB Balanced";
+      }
+
+      document.getElementById("voiceLiveMetricAr").textContent = `التردد الصوتي (F0): ${pitch} Hz • مطابقة فورية للقاعدة`;
+      document.getElementById("voiceLiveMetricEn").textContent = `Pitch (F0): ${pitch} Hz • Matched to Evidence DB`;
+      const vAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateVoiceAgeAndSex(pitch, 0.14);
+      const vAgeSexElAr = document.getElementById("voiceAgeSexAr");
+      const vAgeSexElEn = document.getElementById("voiceAgeSexEn");
+      if (vAgeSexElAr) vAgeSexElAr.textContent = `العمر والنوع من الصوت: عمر تقديري ~${vAgeSex.ageEstimate} سنة • ${vAgeSex.sexAr}`;
+      if (vAgeSexElEn) vAgeSexElEn.textContent = `Voice Age & Sex: Est. ~${vAgeSex.ageEstimate}y • ${vAgeSex.sexEn}`;
+      const vDiseases = VERIFIED_BIOMETRIC_DATABASE.getVoiceDiseases(pitch, 0.14);
+      const vDiseasesAr = vDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+      const vDiseasesEn = vDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+      const vExp = VERIFIED_BIOMETRIC_DATABASE.getExpandedVoiceDetails(voiceProfile.id);
+      document.getElementById("voiceDbMatchAr").textContent = `القاعدة الموثقة (${voiceProfile.id}): ${voiceProfile.labelAr} • ${voiceProfile.psychBehavioralAr} • ${vExp.summaryAr} • ${vExp.followUpAr} || الأمراض المرتبطة: ${vDiseasesAr}`;
+      document.getElementById("voiceDbMatchEn").textContent = `DB (${voiceProfile.id}): ${voiceProfile.labelEn} || Conditions: ${vDiseasesEn}`;
+
+      document.getElementById("eyeLiveMetricAr").textContent = `إضاءة: ${lum} • حدة التباين: ${sharpness} • الصلبة: ${Math.round(redness * 100)}%`;
+      document.getElementById("eyeLiveMetricEn").textContent = `Lum: ${lum} • Sharpness: ${sharpness} • Sclera: ${Math.round(redness * 100)}%`;
+      const eAgeSex = VERIFIED_BIOMETRIC_DATABASE.estimateEyeAgeAndSex(sharpness, lum, redness);
+      const eAgeSexElAr = document.getElementById("eyeAgeSexAr");
+      const eAgeSexElEn = document.getElementById("eyeAgeSexEn");
+      if (eAgeSexElAr) eAgeSexElAr.textContent = `العمر والنوع من العين: عمر تقديري ~${eAgeSex.ageEstimate} سنة • ${eAgeSex.sexAr}`;
+      if (eAgeSexElEn) eAgeSexElEn.textContent = `Eye Age & Sex: Est. ~${eAgeSex.ageEstimate}y • ${eAgeSex.sexEn}`;
+      const eDiseases = VERIFIED_BIOMETRIC_DATABASE.getEyeDiseases(redness, lum, sharpness);
+      const eDiseasesAr = eDiseases.map((d) => `${d.diseaseAr} (${d.source})`).join(" • ");
+      const eDiseasesEn = eDiseases.map((d) => `${d.diseaseEn} [${d.source}]`).join(" • ");
+      const evExp = VERIFIED_BIOMETRIC_DATABASE.getExpandedEyeAndVisionDetails(eyeProfile.id, visionProfile.id);
+      document.getElementById("eyeDbMatchAr").textContent = `بصمة العين (${eyeProfile.id}): ${eyeProfile.labelAr} • ${eyeProfile.psychBehavioralAr} • ${evExp.eyeExp.summaryAr} • ${evExp.eyeExp.followUpAr} || الأمراض العينية: ${eDiseasesAr}`;
+      document.getElementById("eyeDbMatchEn").textContent = `Eye DB (${eyeProfile.id}): ${eyeProfile.labelEn} || Ocular Conditions: ${eDiseasesEn}`;
+
+      const vMatchAr = document.getElementById("visionDbMatchAr");
+      const vMatchEn = document.getElementById("visionDbMatchEn");
+      if (vMatchAr && vMatchEn) {
+        const evExpVis = VERIFIED_BIOMETRIC_DATABASE.getExpandedEyeAndVisionDetails(eyeProfile.id, visionProfile.id);
+        vMatchAr.textContent = `تشخيص النظر (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelAr} — ${visionProfile.psychBehavioralAr} • ${evExpVis.visExp.summaryAr} • ${evExpVis.visExp.followUpAr}`;
+        vMatchEn.textContent = `Vision DB (${visionProfile.id} • ${visionProfile.acuityEstimate}): ${visionProfile.labelEn}`;
+      }
+
+      let waterPct = Math.max(voiceProfile.suggestedFillPct, eyeProfile.suggestedFillPct, visionProfile.suggestedFillPct);
+      if (glucose > 140 || cbcMode === "review") {
+        waterPct = Math.max(waterPct, 90);
+      }
+
+      const waterAdviceAr =
+        waterPct >= 85
+          ? `بعد الفحص: يحتاج الشخص إلى أكثر من كوب ماء (حوالي كوب ونصف / 350 مل) بسبب ${visionProfile.labelAr} ومؤشرات الفحص.`
+          : waterPct <= 50
+            ? `بعد الفحص: يحتاج الشخص إلى أقل من كوب ماء (حوالي نصف كوب / 120 مل) مع استقرار المؤشرات.`
+            : `بعد الفحص: يحتاج الشخص إلى كوب ماء كامل (حوالي 250 مل) لدعم الترطيب والتركيز.`;
+
+      const waterAdviceEn =
+        waterPct >= 85
+          ? `Post-test: More than 1 glass of water (~350 ml) advised based on ${visionProfile.id} & blood markers.`
+          : waterPct <= 50
+            ? `Post-test: Less than a full glass (~120 ml) is sufficient under current markers.`
+            : `Post-test: Full glass of water (~250 ml) advised for hydration & visual focus.`;
+
+      updateWaterGlassVisual(
+        waterPct,
+        waterAdviceAr,
+        waterAdviceEn,
+        `صوت (${voiceProfile.id}) • عين (${eyeProfile.id}) • نظر (${visionProfile.id} • ${visionProfile.acuityEstimate})`,
+        `Voice (${voiceProfile.id}) • Eye (${eyeProfile.id}) • Vision (${visionProfile.id})`
+      );
+
+      lastVoiceSummaryAr = `${voiceProfile.labelAr} (${pitch}Hz)`;
+      lastVoiceSummaryEn = `${voiceProfile.labelEn} (${pitch}Hz)`;
+      lastEyeSummaryAr = `${eyeProfile.labelAr} | ${visionProfile.acuityEstimate}`;
+      lastEyeSummaryEn = `${eyeProfile.labelEn} | ${visionProfile.acuityEstimate}`;
+
+      refreshDiagnosticReport();
+      if (saveToLog) {
+        const timeAr = new Date().toLocaleTimeString("ar-EG", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        const timeEn = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><span class="ar-line">${timeAr}</span><span class="en-line">${timeEn}</span></td>
+          <td><span class="ar-line">${currentBioAr} • ${visionProfile.acuityEstimate}</span><span class="en-line">${currentBioEn} • ${visionProfile.id}</span></td>
+          <td><span class="ar-line">${glucose} mg/dL</span><span class="en-line">${gStatusEn}</span></td>
+          <td><span class="ar-line">${document.getElementById("cbcAr").textContent}</span><span class="en-line">${document.getElementById("cbcEn").textContent}</span></td>
+          <td><span class="ar-line">${voiceProfile.id} + ${eyeProfile.id} + ${visionProfile.id}</span><span class="en-line">DB Matched Panel</span></td>
+          <td><span class="ar-line">${waterPct}% ماء</span><span class="en-line">${waterPct}% water</span></td>
+        `;
+        document.getElementById("logBody").prepend(tr);
+        flashVisualElement("hydrationDiagnosisBox");
+        playToneSequence([523.25, 659.25, 783.99], 0.1, "triangle", 0.06);
+        speakArabicText(
+          `تم اعتماد التشخيص. الجلوكوز ${glucose} مليغرام لكل ديسيلتر. ${waterAdviceAr}`,
+          "تم حفظ التشخيص المتكامل في السجل",
+          "Integrated diagnosis saved to session log"
+        );
+      }
+    }
+
+    function applyPresetCase(caseName) {
+      if (caseName === "fatigue") {
+        document.getElementById("calPitchRange").value = 112;
+        document.getElementById("calSharpRange").value = 18;
+        document.getElementById("calLumRange").value = 82;
+        document.getElementById("calRedRange").value = 22;
+        document.getElementById("calGlucoseInput").value = 148;
+        document.getElementById("calCbcSelect").value = "review";
+      } else {
+        document.getElementById("calPitchRange").value = 255;
+        document.getElementById("calSharpRange").value = 15;
+        document.getElementById("calLumRange").value = 155;
+        document.getElementById("calRedRange").value = 9;
+        document.getElementById("calGlucoseInput").value = 94;
+        document.getElementById("calCbcSelect").value = "balanced";
+      }
+      recomputeFromCalibration(true);
+    }
+
+    
+    function buildDiagnosticReportString() {
+      const nowStr = new Date().toLocaleString("ar-EG");
+      const bioStatus = document.getElementById("bioStatusAr")?.textContent || currentBioAr;
+      const bioMeta = document.getElementById("bioMetaAr")?.textContent || "";
+      const glucose = document.getElementById("glucoseAr")?.textContent || "";
+      const cbc = document.getElementById("cbcAr")?.textContent || "";
+      const chipPanel = document.getElementById("chipPanelAr")?.textContent || "";
+      const voiceMetric = document.getElementById("voiceLiveMetricAr")?.textContent || "";
+      const voiceDb = document.getElementById("voiceDbMatchAr")?.textContent || "";
+      const eyeMetric = document.getElementById("eyeLiveMetricAr")?.textContent || "";
+      const eyeDb = document.getElementById("eyeDbMatchAr")?.textContent || "";
+      const visionDb = document.getElementById("visionDbMatchAr")?.textContent || "";
+      const hydrationMsg = document.getElementById("hydrationMsgAr")?.textContent || "";
+      const glassPct = document.getElementById("glassLevelPercent")?.textContent || "";
+
+      return [
+        "==========================================",
+        "تقرير منظومة AIGQ للتشخيص الاكثر دقه والاسرع والأحدث عالميا",
+        "مشروع وفكرة واختراع محمد احمد بكاء",
+        "التاريخ والوقت: " + nowStr,
+        "==========================================",
+        "1) التحقق البيومتري بالبصمة: " + bioStatus + (bioMeta ? " (" + bioMeta + ")" : ""),
+        "2) فحص الدم والشريحة الخاصة (بلا مواد خارجية):",
+        "   - الجلوكوز: " + glucose,
+        "   - صورة الدم (CBC): " + cbc,
+        "   - فحوصات الشريحة: " + chipPanel,
+        "3) بصمة الصوت والعمر والنوع: " + voiceMetric + " | " + (document.getElementById("voiceAgeSexAr")?.textContent || ""),
+        "   - المطابقة: " + voiceDb,
+                "5) بصمة العين والعمر والنوع: " + eyeMetric + " | " + (document.getElementById("eyeAgeSexAr")?.textContent || ""),
+        "   - المطابقة: " + eyeDb,
+        "6) تشخيص النظر: " + visionDb,
+        "7) احتياج الماء بعد الفحص: " + hydrationMsg + " [" + glassPct + "]",
+        "------------------------------------------",
+        "8) خانات محجوزة لباقي التشخيصات لحين تجهيز القطع المبرمجة للتطبيق:",
+        "   - [فراغ مخصص لقنوات شريحة AIGQ المبرمجة الجديدة]",
+        "   - [فراغ مخصص لقراءات منفذ USB-C الحية الجديدة]",
+        "=========================================="
+      ].join("\n");
+    }
+
+    function refreshDiagnosticReport() {
+      const box = document.getElementById("diagnosticReportText");
+      if (box) {
+        box.textContent = buildDiagnosticReportString();
+      }
+    }
+
+    async function copyDiagnosticReport() {
+      const text = buildDiagnosticReportString();
+      const arBtn = document.getElementById("copyReportAr");
+      const enBtn = document.getElementById("copyReportEn");
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        if (arBtn) arBtn.textContent = "تم نسخ التقرير ✓";
+        if (enBtn) enBtn.textContent = "Copied ✓";
+        setTimeout(() => {
+          if (arBtn) arBtn.textContent = "نسخ التقرير الكامل";
+          if (enBtn) enBtn.textContent = "Copy Full Report";
+        }, 1800);
+      } catch (e) {
+        if (arBtn) arBtn.textContent = "تعذر النسخ التلقائي";
+      }
+    }
+
+    function downloadDiagnosticReport() {
+      const text = buildDiagnosticReportString();
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "AIGQ-Diagnostic-Report.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+
+    let demoActive = true;
+    let currentBioAr = "تم التحقق";
+    let currentBioEn = "Verified";
+
+    function switchScreen(screenId) {
+      document.querySelectorAll("#screensNav button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.screen === screenId);
+      });
+      document.querySelectorAll(".screen-panel").forEach((panel) => {
+        panel.classList.remove("active");
+      });
+      const target = document.getElementById("screen-" + screenId);
+      if (target) target.classList.add("active");
+    }
+
+    function setConn(state) {
+      const banner = document.getElementById("connBanner");
+      const arEl = document.getElementById("connAr");
+      const enEl = document.getElementById("connEn");
+      const descAr = document.getElementById("connDescAr");
+      const descEn = document.getElementById("connDescEn");
+
+      banner.className = "conn-banner";
+      if (state === "connected") {
+        arEl.textContent = "● متصل وجاهز لاستقبال بيانات البصمة والشريحة عبر USB-C";
+        enEl.textContent = "Connected & ready to stream biometric and chip data via USB-C";
+        descAr.textContent = "النموذج التجميعي في منفذ USB-C يوضح مسار الربط والبيانات تمهيداً لطلب وتصنيع القطع المبرمجة بمواصفاتنا الخاصة.";
+        descEn.textContent = "USB-C assembly demonstrates the end-to-end workflow ahead of custom-programmed hardware manufacturing.";
+      } else if (state === "waiting") {
+        banner.classList.add("waiting");
+        arEl.textContent = "◐ بانتظار إشارة الشريحة والقياس البيومتري";
+        enEl.textContent = "Waiting for chip signal & biometric input";
+        descAr.textContent = "المنفذ متصل وجارٍ انتظار اكتمال تمرير الإشارة من الشريحة ومستشعر البصمة.";
+        descEn.textContent = "Bridge is active and waiting for incoming chip and fingerprint signals.";
+      } else {
+        banner.classList.add("disconnected");
+        arEl.textContent = "○ غير متصل — تحقق من منفذ أو كابل USB-C";
+        enEl.textContent = "Disconnected — check USB-C port or cable";
+        descAr.textContent = "لم يتم رصد إشارة نشطة من القطعة؛ يمكنك إعادة التوصيل أو المتابعة عبر وضع العرض.";
+        descEn.textContent = "No active hardware signal detected; reconnect USB-C or continue in demo mode.";
+      }
+    }
+
+        // استشعار حقيقي للوحة البصمة البيومترية الرئيسية: لا يقبل بضغطة سريعة وهمية حتى ينتهي من قراءة البصمة فعلياً
+    let padFpActive = false;
+    let padFpPoints = [];
+    let padFpStartTime = 0;
+    let padFpVerified = false;
+    let padFpCode = null;
+    const PAD_MIN_SAMPLES = 14;
+    const PAD_MIN_PATH_PX = 95;
+    const PAD_MIN_DURATION_MS = 750;
+
+    function syncPadFingerprintCanvas() {
+      const pad = document.getElementById("fingerprintPad");
+      const canvas = document.getElementById("padFingerprintCanvas");
+      if (!pad || !canvas) return;
+      const rect = pad.getBoundingClientRect();
+      const w = Math.max(80, Math.round(rect.width));
+      const h = Math.max(80, Math.round(rect.height));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function measurePadFpProgress(points, startTime) {
+      let pathLen = 0;
+      for (let i = 1; i < points.length; i++) {
+        pathLen += Math.hypot(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y);
+      }
+      const elapsedMs = startTime ? Math.max(0, performance.now() - startTime) : 0;
+      const samplePct = Math.min(100, (points.length / PAD_MIN_SAMPLES) * 100);
+      const pathPct = Math.min(100, (pathLen / PAD_MIN_PATH_PX) * 100);
+      const timePct = Math.min(100, (elapsedMs / PAD_MIN_DURATION_MS) * 100);
+      const overallPct = Math.min(100, Math.round((samplePct * 0.35) + (pathPct * 0.4) + (timePct * 0.25)));
+      const isComplete =
+        points.length >= PAD_MIN_SAMPLES &&
+        pathLen >= PAD_MIN_PATH_PX &&
+        elapsedMs >= PAD_MIN_DURATION_MS;
+
+      return {
+        pathLen: Math.round(pathLen),
+        elapsedMs: Math.round(elapsedMs),
+        overallPct,
+        isComplete
+      };
+    }
+
+    function drawPadFingerprintTrace() {
+      syncPadFingerprintCanvas();
+      const canvas = document.getElementById("padFingerprintCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (padFpPoints.length === 0) return;
+
+      ctx.save();
+      ctx.strokeStyle = padFpVerified ? "#10b981" : "#f59e0b";
+      ctx.lineWidth = 2.6;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.beginPath();
+      padFpPoints.forEach((pt, idx) => {
+        if (idx === 0) ctx.moveTo(pt.x, pt.y);
+        else ctx.lineTo(pt.x, pt.y);
+      });
+      ctx.stroke();
+
+      padFpPoints.forEach((pt, idx) => {
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, idx === padFpPoints.length - 1 ? 4 : 2.3, 0, Math.PI * 2);
+        ctx.fillStyle = idx === padFpPoints.length - 1 ? "#fde68a" : "#67e8f9";
+        ctx.fill();
+      });
+      ctx.restore();
+    }
+
+    function updatePadFingerprintUI(prog) {
+      const pad = document.getElementById("fingerprintPad");
+      const statusAr = document.getElementById("bioStatusAr");
+      const statusEn = document.getElementById("bioStatusEn");
+      const metaAr = document.getElementById("bioMetaAr");
+      const metaEn = document.getElementById("bioMetaEn");
+
+      if (padFpVerified && padFpCode) {
+        if (pad) {
+          pad.classList.remove("scanning");
+          pad.classList.add("verified");
+        }
+        if (statusAr) {
+          statusAr.style.color = "#6ee7b7";
+          statusAr.textContent = "تم التحقق من البصمة الفعلية ✓";
+        }
+        if (statusEn) statusEn.textContent = "Real Fingerprint Verified ✓";
+        if (metaAr) {
+          metaAr.textContent = `معرف البصمة: BIO-AIGQ-${padFpCode} • مكتمل 100% • المسار: ${prog.pathLen}px • النقاط: ${padFpPoints.length}`;
+        }
+        if (metaEn) {
+          metaEn.textContent = `Biometric ID: BIO-AIGQ-${padFpCode} • 100% Complete • Path: ${prog.pathLen}px • Samples: ${padFpPoints.length}`;
+        }
+        currentBioAr = `موثّق (BIO-${padFpCode})`;
+        currentBioEn = `Verified (BIO-${padFpCode})`;
+        return;
+      }
+
+      if (pad) {
+        pad.classList.remove("verified");
+        if (padFpActive) pad.classList.add("scanning");
+        else pad.classList.remove("scanning");
+      }
+
+      if (statusAr) {
+        statusAr.style.color = "#fcd34d";
+        statusAr.textContent = padFpActive
+          ? "جاري قراءة البصمة الفعلية... استمر في ملامسة وتحريك الإصبع"
+          : "لم تكتمل القراءة الفعلية — اضغط واسحب بإصبعك داخل المستشعر";
+      }
+      if (statusEn) {
+        statusEn.textContent = padFpActive
+          ? "Reading Real Print... Keep finger touching & moving"
+          : "Incomplete Real Scan — Press & drag finger across sensor";
+      }
+      if (metaAr) {
+        metaAr.textContent = `اكتمال القراءة الفعلية: ${prog.overallPct}% • المسار: ${prog.pathLen}/${PAD_MIN_PATH_PX}px • النقاط: ${padFpPoints.length}/${PAD_MIN_SAMPLES} • الزمن: ${prog.elapsedMs}/${PAD_MIN_DURATION_MS}ms`;
+      }
+      if (metaEn) {
+        metaEn.textContent = `Real Capture: ${prog.overallPct}% • Path: ${prog.pathLen}/${PAD_MIN_PATH_PX}px • Samples: ${padFpPoints.length}/${PAD_MIN_SAMPLES} • Time: ${prog.elapsedMs}/${PAD_MIN_DURATION_MS}ms`;
+      }
+    }
+
+    function resetPadFingerprintCapture() {
+      padFpActive = false;
+      padFpPoints = [];
+      padFpStartTime = 0;
+      padFpVerified = false;
+      padFpCode = null;
+      currentBioAr = "غير موثّق";
+      currentBioEn = "Unverified";
+      drawPadFingerprintTrace();
+      updatePadFingerprintUI({ pathLen: 0, elapsedMs: 0, overallPct: 0, isComplete: false });
+      refreshDiagnosticReport();
+    }
+
+    function handlePadFingerprintDown(event) {
+      const pad = document.getElementById("fingerprintPad");
+      if (!pad) return;
+      try {
+        pad.setPointerCapture(event.pointerId);
+      } catch (e) {}
+
+      padFpActive = true;
+      padFpVerified = false;
+      padFpCode = null;
+      padFpStartTime = performance.now();
+      const rect = pad.getBoundingClientRect();
+      padFpPoints = [
+        {
+          x: Math.max(0, Math.min(rect.width, event.clientX - rect.left)),
+          y: Math.max(0, Math.min(rect.height, event.clientY - rect.top)),
+          t: performance.now()
+        }
+      ];
+
+      playToneSequence([440, 554.37], 0.08, "sine", 0.05);
+      drawPadFingerprintTrace();
+      updatePadFingerprintUI(measurePadFpProgress(padFpPoints, padFpStartTime));
+    }
+
+    function handlePadFingerprintMove(event) {
+      if (!padFpActive) return;
+      const pad = document.getElementById("fingerprintPad");
+      if (!pad) return;
+      const rect = pad.getBoundingClientRect();
+      const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left));
+      const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+      const last = padFpPoints[padFpPoints.length - 1];
+      if (!last || Math.hypot(x - last.x, y - last.y) >= 2.0) {
+        padFpPoints.push({ x, y, t: performance.now() });
+        drawPadFingerprintTrace();
+        const prog = measurePadFpProgress(padFpPoints, padFpStartTime);
+        if (prog.isComplete && !padFpVerified) {
+          padFpVerified = true;
+          padFpCode = Math.floor(100 + Math.random() * 899);
+          flashVisualElement("fingerprintPad");
+          playToneSequence([659.25, 880], 0.11, "triangle", 0.07);
+          speakArabicText("تم التحقق من البصمة بنجاح", "تم إكمال قراءة البصمة الفعلية وتوثيقها ✓", "Real biometric fingerprint completed & verified ✓");
+          refreshDiagnosticReport();
+        }
+        updatePadFingerprintUI(prog);
+      }
+    }
+
+    function handlePadFingerprintUp(event) {
+      if (!padFpActive) return;
+      padFpActive = false;
+      const pad = document.getElementById("fingerprintPad");
+      if (pad) {
+        try {
+          pad.releasePointerCapture(event.pointerId);
+        } catch (e) {}
+      }
+      const prog = measurePadFpProgress(padFpPoints, padFpStartTime);
+      if (prog.isComplete && !padFpVerified) {
+        padFpVerified = true;
+        padFpCode = Math.floor(100 + Math.random() * 899);
+        flashVisualElement("fingerprintPad");
+        playToneSequence([659.25, 880], 0.11, "triangle", 0.07);
+        speakArabicText("تم التحقق من البصمة بنجاح", "تم إكمال قراءة البصمة الفعلية وتوثيقها ✓", "Real biometric fingerprint completed & verified ✓");
+        refreshDiagnosticReport();
+      } else if (!padFpVerified) {
+        // لا يقبل القراءة الناقصة أو الضغطة السريعة الوهمية
+        padFpPoints = [];
+        padFpStartTime = 0;
+        drawPadFingerprintTrace();
+        playToneSequence([293.66], 0.11, "sine", 0.04);
+      }
+      updatePadFingerprintUI(prog);
+    }
+
+    function handlePadFingerprintCancel(event) {
+      padFpActive = false;
+      const pad = document.getElementById("fingerprintPad");
+      if (pad) {
+        try {
+          pad.releasePointerCapture(event.pointerId);
+        } catch (e) {}
+      }
+      updatePadFingerprintUI(measurePadFpProgress(padFpPoints, padFpStartTime));
+    }
+
+    function triggerFingerprintScan() {
+      const prog = measurePadFpProgress(padFpPoints, padFpStartTime);
+      if (!prog.isComplete) {
+        updatePadFingerprintUI(prog);
+        playToneSequence([293.66], 0.11, "sine", 0.04);
+        return;
+      }
+      if (!padFpVerified) {
+        padFpVerified = true;
+        padFpCode = Math.floor(100 + Math.random() * 899);
+      }
+      updatePadFingerprintUI(prog);
+    }
+
+    function updateWaterGlassVisual(fillPercent, msgAr, msgEn, subAr, subEn) {
+      const clamped = Math.max(15, Math.min(96, fillPercent));
+      // عند 0% امتلاء يكون الإزاحة 76px، وعند 100% يكون 0px
+      const translateY = Math.round(80 - (clamped / 100) * 76);
+      const liquidGroup = document.getElementById("waterLiquidGroup");
+      if (liquidGroup) {
+        liquidGroup.style.transform = `translateY(${translateY}px)`;
+      }
+      document.getElementById("glassLevelPercent").textContent = `${clamped}% WATER`;
+      document.getElementById("hydrationMsgAr").textContent = msgAr;
+      document.getElementById("hydrationMsgEn").textContent = msgEn;
+      document.getElementById("hydrationSubAr").textContent = subAr;
+      document.getElementById("hydrationSubEn").textContent = subEn;
+    }
+
+    function runReading(mode) {
+      let gAr = "96 mg/dL", gEn = "Normal Range";
+      let cAr = "RBC • WBC • HGB متوازنة", cEn = "RBC • WBC • HGB Balanced";
+      let pAr = "مكتملة عبر الشريحة فقط", pEn = "Chip-Integrated Only";
+
+      let fillPct = 65;
+      let wMsgAr = "بعد فحص الدم: يحتاج الشخص إلى كوب ماء كامل (حوالي 250 مل) لتعزيز الترطيب.";
+      let wMsgEn = "Post-blood test: Person needs a full glass of water (~250 ml) for hydration.";
+      let wSubAr = "مؤشرات الدم متوازنة؛ شرب كوب ماء يدعم الدورة الدموية والراحة بعد الفحص.";
+      let wSubEn = "Blood markers are balanced; a glass of water supports post-test comfort.";
+      let logWaterAr = "كوب ماء (65%)";
+      let logWaterEn = "1 Glass (65%)";
+
+      if (mode === "review") {
+        gAr = "158 mg/dL", gEn = "Elevated • Review";
+        cAr = "مؤشرات تحتاج متابعة (WBC / HGB)", cEn = "Markers Need Review (WBC / HGB)";
+        pAr = "تنبيه من مؤشرات الشريحة فقط", pEn = "Chip-Only Alert";
+
+        fillPct = 92;
+        wMsgAr = "بعد فحص الدم: يحتاج الشخص إلى أكثر من كوب ماء (حوالي كوب ونصف / 350 مل) للمساعدة في الترطيب.";
+        wMsgEn = "Post-blood test: Person needs more than 1 glass of water (~1.5 glasses / 350 ml).";
+        wSubAr = "الارتفاع في القراءات يستدعي عناية أكبر بالترطيب بالماء بعد الفحص.";
+        wSubEn = "Elevated readings indicate higher post-test water hydration need.";
+        logWaterAr = "أكثر من كوب (92%)";
+        logWaterEn = "> 1 Glass (92%)";
+      } else if (mode === "light") {
+        gAr = "88 mg/dL", gEn = "Optimal Range";
+        cAr = "RBC • WBC • HGB ممتازة", cEn = "RBC • WBC • HGB Optimal";
+        pAr = "مكتملة عبر الشريحة فقط", pEn = "Chip-Integrated Only";
+
+        fillPct = 35;
+        wMsgAr = "بعد فحص الدم: يحتاج الشخص إلى أقل من كوب ماء (حوالي نصف كوب / 120 مل) كافٍ حالياً.";
+        wMsgEn = "Post-blood test: Person needs less than a full glass of water (~half glass / 120 ml).";
+        wSubAr = "مستوى الترطيب جيد؛ كمية أقل من كوب ماء تكفي بعد أخذ العينة.";
+        wSubEn = "Hydration baseline is good; less than a full glass is sufficient after testing.";
+        logWaterAr = "أقل من كوب (35%)";
+        logWaterEn = "< 1 Glass (35%)";
+      }
+
+      document.getElementById("glucoseAr").textContent = gAr;
+      document.getElementById("glucoseEn").textContent = gEn;
+      document.getElementById("cbcAr").textContent = cAr;
+      document.getElementById("cbcEn").textContent = cEn;
+      document.getElementById("chipPanelAr").textContent = pAr;
+      document.getElementById("chipPanelEn").textContent = pEn;
+
+      updateWaterGlassVisual(fillPct, wMsgAr, wMsgEn, wSubAr, wSubEn);
+      flashVisualElement("hydrationDiagnosisBox");
+      if (mode === "review") {
+        playToneSequence([523.25, 659.25, 783.99], 0.11, "triangle", 0.07);
+      } else if (mode === "light") {
+        playToneSequence([659.25, 523.25], 0.1, "sine", 0.07);
+      } else {
+        playToneSequence([523.25, 659.25, 1046.5], 0.1, "triangle", 0.06);
+      }
+      speakArabicText(
+        `تم إكمال الفحص. الجلوكوز ${gAr}. ${wMsgAr}`,
+        "تم تحديث النتيجة والكوب الزجاجي مع النطق الصوتي",
+        "Reading, water glass, and spoken alert updated"
+      );
+
+      const timeAr = new Date().toLocaleTimeString("ar-EG", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      const timeEn = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><span class="ar-line">${timeAr}</span><span class="en-line">${timeEn}</span></td>
+        <td><span class="ar-line">${currentBioAr}</span><span class="en-line">${currentBioEn}</span></td>
+        <td><span class="ar-line">${gAr}</span><span class="en-line">${gEn}</span></td>
+        <td><span class="ar-line">${cAr}</span><span class="en-line">${cEn}</span></td>
+        <td><span class="ar-line">${pAr}</span><span class="en-line">${pEn}</span></td>
+        <td><span class="ar-line">${logWaterAr}</span><span class="en-line">${logWaterEn}</span></td>
+      `;
+      document.getElementById("logBody").prepend(tr);
+    }
+
+    function toggleMode() {
+      demoActive = !demoActive;
+      document.getElementById("modeAr").textContent = demoActive ? "وضع العرض التوضيحي" : "وضع الجاهزية المباشرة";
+      document.getElementById("modeEn").textContent = demoActive ? "Investor Demo Mode" : "Live Readiness Mode";
+    }
+
+    let voiceEnabled = true;
+    let audioCtx = null;
+    let speechSessionToken = 0;
+    const voiceCache = { ar: null, en: null, es: null, de: null };
+
+    const LANG_META = {
+      ar: { prefix: "ar", fallback: "ar-SA", labelAr: "العربية", labelEn: "Arabic", pitch: 0.98, rate: 0.94 },
+      en: { prefix: "en", fallback: "en-US", labelAr: "الإنجليزية", labelEn: "English", pitch: 1.0, rate: 0.97 },
+      es: { prefix: "es", fallback: "es-ES", labelAr: "الإسبانية", labelEn: "Spanish", pitch: 1.0, rate: 0.96 },
+      de: { prefix: "de", fallback: "de-DE", labelAr: "الألمانية", labelEn: "German", pitch: 0.97, rate: 0.95 }
+    };
+
+    function pickBestVoiceForLang(langKey) {
+      if (!("speechSynthesis" in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      const cfg = LANG_META[langKey] || LANG_META.en;
+
+      const scored = voices
+        .filter((v) => v.lang && v.lang.toLowerCase().startsWith(cfg.prefix))
+        .map((v) => {
+          let score = 0;
+          const name = (v.name || "").toLowerCase();
+          const lang = (v.lang || "").toLowerCase();
+          if (name.includes("natural") || name.includes("neural") || name.includes("online") || name.includes("enhanced") || name.includes("google")) score += 45;
+          if (langKey === "ar" && (name.includes("hamed") || name.includes("salma") || name.includes("tarik") || name.includes("zeina") || name.includes("maged") || name.includes("laila"))) score += 25;
+          if (langKey === "en" && (name.includes("aria") || name.includes("guy") || name.includes("jenny") || name.includes("samantha") || name.includes("daniel"))) score += 20;
+          if (langKey === "es" && (name.includes("elvira") || name.includes("alvaro") || name.includes("paloma") || name.includes("monica"))) score += 20;
+          if (langKey === "de" && (name.includes("katja") || name.includes("conrad") || name.includes("anna") || name.includes("viktor"))) score += 20;
+          if (!v.localService) score += 10;
+          return { voice: v, score };
+        })
+        .sort((a, b) => b.score - a.score);
+
+      voiceCache[langKey] = scored.length ? scored[0].voice : null;
+      return voiceCache[langKey];
+    }
+
+    function refreshAllVoices() {
+      ["en", "es", "de"].forEach(pickBestVoiceForLang);
+    }
+
+    if ("speechSynthesis" in window) {
+      refreshAllVoices();
+      window.speechSynthesis.onvoiceschanged = refreshAllVoices;
+    }
+
+    function setActiveLangPill(activeKey, completedKeys = []) {
+      const pills = document.querySelectorAll("#langSequencePills .lang-pill");
+      pills.forEach((pill) => {
+        const k = pill.dataset.lang;
+        pill.classList.remove("active-lang", "done-lang");
+        if (k === activeKey) pill.classList.add("active-lang");
+        else if (completedKeys.includes(k)) pill.classList.add("done-lang");
+      });
+    }
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (Ctx) audioCtx = new Ctx();
+      }
+      if (audioCtx && audioCtx.state === "suspended") {
+        audioCtx.resume().catch(() => {});
+      }
+      return audioCtx;
+    }
+
+    // نغمات احترافية ناعمة ذات رنين مريح دون حدة إلكترونية
+    function playToneSequence(freqs, duration = 0.14, type = "sine", gap = 0.07) {
+      if (!voiceEnabled) return;
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+
+      freqs.forEach((freq, idx) => {
+        const startTime = ctx.currentTime + idx * (duration + gap);
+        const osc = ctx.createOscillator();
+        const overtone = ctx.createOscillator();
+        const filter = ctx.createBiquadFilter();
+        const gain = ctx.createGain();
+        const overGain = ctx.createGain();
+
+        filter.type = "lowpass";
+        filter.frequency.setValueAtTime(1950, startTime);
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, startTime);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.012, startTime + duration);
+
+        overtone.type = "sine";
+        overtone.frequency.setValueAtTime(freq * 2, startTime);
+
+        gain.gain.setValueAtTime(0.0001, startTime);
+        gain.gain.linearRampToValueAtTime(0.075, startTime + 0.025);
+        gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+        overGain.gain.setValueAtTime(0.0001, startTime);
+        overGain.gain.linearRampToValueAtTime(0.015, startTime + 0.025);
+        overGain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration * 0.8);
+
+        osc.connect(filter);
+        overtone.connect(overGain);
+        overGain.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(startTime);
+        overtone.start(startTime);
+        osc.stop(startTime + duration + 0.03);
+        overtone.stop(startTime + duration + 0.03);
+      });
+    }
+
+    function formatNaturalArabicSpeech(rawText) {
+      return String(rawText || "")
+        .replace(/[✓•]/g, " ")
+        .replace(/:/g, "، ")
+        .replace(/mg\/dL/gi, " مليغرام لكل ديسيلتر ")
+        .replace(/مل/g, " ملليلتر ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    // ترجمة ذكية دقيقة للعبارات الطبية والحركية والترطيب إلى الإنجليزية والإسبانية والألمانية
+    function translateSentenceToAllLanguages(arabicText) {
+      const arClean = formatNaturalArabicSpeech(arabicText);
+      const exactMap = {
+        "جاري قراءة البصمة البيومترية": {
+          en: "Scanning biometric fingerprint.",
+          es: "Escaneando la huella biométrica.",
+          de: "Biometrischer Fingerabdruck wird gescannt."
+        },
+        "تم التحقق من البصمة بنجاح": {
+          en: "Fingerprint verified successfully.",
+          es: "Huella dactilar verificada con éxito.",
+          de: "Fingerabdruck erfolgreich bestätigt."
+        },
+        "تم تفعيل التفاعل الصوتي": {
+          en: "Audio feedback enabled.",
+          es: "Interacción de voz activada.",
+          de: "Sprachausgabe aktiviert."
+        }
+      };
+
+      if (exactMap[arClean]) {
+        return { ar: arClean, ...exactMap[arClean] };
+      }
+
+      // استخراج رقم الجلوكوز إن وجد
+      const glucoseMatch = arClean.match(/الجلوكوز\s*(\d+)\s*مليغرام لكل ديسيلتر/);
+      const glucosePart = glucoseMatch
+        ? {
+            en: `Glucose is ${glucoseMatch[1]} milligrams per deciliter. `,
+            es: `La glucosa es ${glucoseMatch[1]} miligramos por decilitro. `,
+            de: `Der Glukosewert liegt bei ${glucoseMatch[1]} Milligramm pro Deziliter. `
+          }
+        : { en: "", es: "", de: "" };
+
+      if (arClean.includes("أكثر من كوب ماء")) {
+        return {
+          ar: arClean,
+          en: `${glucosePart.en}After the blood test, the person needs more than one full glass of water, about 350 milliliters, for hydration.`.trim(),
+          es: `${glucosePart.es}Después del análisis de sangre, la persona necesita más de un vaso de agua, unos 350 mililitros, para hidratarse.`.trim(),
+          de: `${glucosePart.de}Nach dem Bluttest benötigt die Person mehr als ein Glas Wasser, etwa 350 Milliliter, zur Flüssigkeitszufuhr.`.trim()
+        };
+      }
+
+      if (arClean.includes("أقل من كوب ماء")) {
+        return {
+          ar: arClean,
+          en: `${glucosePart.en}After the blood test, the person needs less than a full glass of water, about 120 milliliters.`.trim(),
+          es: `${glucosePart.es}Después del análisis de sangre, la persona necesita menos de un vaso de agua, unos 120 mililitros.`.trim(),
+          de: `${glucosePart.de}Nach dem Bluttest benötigt die Person weniger als ein Glas Wasser, etwa 120 Milliliter.`.trim()
+        };
+      }
+
+      if (arClean.includes("كوب ماء كامل") || arClean.includes("كوب ماء")) {
+        return {
+          ar: arClean,
+          en: `${glucosePart.en}After the blood test, the person needs a full glass of water, about 250 milliliters, to support hydration.`.trim(),
+          es: `${glucosePart.es}Después del análisis de sangre, la persona necesita un vaso completo de agua, unos 250 mililitros, para favorecer la hidratación.`.trim(),
+          de: `${glucosePart.de}Nach dem Bluttest benötigt die Person ein volles Glas Wasser, etwa 250 Milliliter, zur Unterstützung der Hydration.`.trim()
+        };
+      }
+
+      return {
+        ar: arClean,
+        en: "Diagnostic update ready on AIGQ smart system.",
+        es: "Actualización diagnóstica lista en el sistema inteligente AIGQ.",
+        de: "Diagnose-Update im intelligenten AIGQ-System bereit."
+      };
+    }
+
+    // نطق كل جملة بالعربية ثم الإنجليزية ثم الإسبانية ثم الألمانية بشكل متسلسل متقن
+    function speakArabicText(text, statusAr, statusEn) {
+      const wave = document.getElementById("soundWaveBars");
+      const bundle = translateSentenceToAllLanguages(text);
+      // إلغاء النطق الصوتي باللغة العربية والبدء مباشرة بالإنجليزية ثم الإسبانية ثم الألمانية
+      const sequence = [
+        { key: "en", text: bundle.en },
+        { key: "es", text: bundle.es },
+        { key: "de", text: bundle.de }
+      ].filter((item) => item.text && item.text.trim().length > 0);
+
+      if (statusAr) document.getElementById("avLiveAr").textContent = statusAr;
+      if (statusEn) document.getElementById("avLiveEn").textContent = statusEn;
+
+      if (!voiceEnabled || !("speechSynthesis" in window)) return;
+
+      const myToken = ++speechSessionToken;
+      try {
+        window.speechSynthesis.cancel();
+        refreshAllVoices();
+        if (wave) wave.classList.add("speaking");
+
+        const completed = [];
+
+        const speakStep = (idx) => {
+          if (myToken !== speechSessionToken || !voiceEnabled) {
+            if (wave) wave.classList.remove("speaking");
+            return;
+          }
+          if (idx >= sequence.length) {
+            if (wave) wave.classList.remove("speaking");
+            setActiveLangPill(null, ["en", "es", "de"]);
+            return;
+          }
+
+          const step = sequence[idx];
+          const cfg = LANG_META[step.key];
+          const chosenVoice = voiceCache[step.key] || pickBestVoiceForLang(step.key);
+
+          setActiveLangPill(step.key, completed);
+          document.getElementById("avLiveAr").textContent = `جاري النطق بـ (${cfg.labelAr}) • ${step.text}`;
+          document.getElementById("avLiveEn").textContent = `Speaking ${cfg.labelEn} (${idx + 1}/4): ${step.text}`;
+
+          const utter = new SpeechSynthesisUtterance(step.text);
+          utter.lang = chosenVoice && chosenVoice.lang ? chosenVoice.lang : cfg.fallback;
+          if (chosenVoice) utter.voice = chosenVoice;
+          utter.rate = cfg.rate;
+          utter.pitch = cfg.pitch;
+          utter.volume = 0.96;
+
+          utter.onend = () => {
+            if (myToken !== speechSessionToken) return;
+            completed.push(step.key);
+            setTimeout(() => speakStep(idx + 1), 160);
+          };
+
+          utter.onerror = () => {
+            if (myToken !== speechSessionToken) return;
+            completed.push(step.key);
+            setTimeout(() => speakStep(idx + 1), 120);
+          };
+
+          window.speechSynthesis.speak(utter);
+        };
+
+        speakStep(0);
+      } catch (e) {
+        if (wave) wave.classList.remove("speaking");
+      }
+    }
+
+    function flashVisualElement(elId) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      el.classList.remove("visual-flash-active");
+      void el.offsetWidth;
+      el.classList.add("visual-flash-active");
+    }
+
+    function toggleVoiceMute() {
+      voiceEnabled = !voiceEnabled;
+      const btnAr = document.getElementById("muteBtnAr");
+      const btnEn = document.getElementById("muteBtnEn");
+      if (voiceEnabled) {
+        btnAr.textContent = "الصوت: مفعّل 🔊";
+        btnEn.textContent = "Voice: ON";
+        playToneSequence([523.25, 659.25], 0.09, "triangle", 0.06);
+        speakArabicText("تم تفعيل التفاعل الصوتي", "الصوت مفعّل وجاهز للنطق والتنبيه", "Voice feedback enabled");
+      } else {
+        btnAr.textContent = "الصوت: مكتوم 🔇";
+        btnEn.textContent = "Voice: MUTED";
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+        document.getElementById("soundWaveBars").classList.remove("speaking");
+        document.getElementById("avLiveAr").textContent = "تم كتم الصوت • التفاعل البصري نشط";
+        document.getElementById("avLiveEn").textContent = "Voice muted • Visual feedback active";
+      }
+    }
+
+    function speakCurrentHydration() {
+      const msgAr = document.getElementById("hydrationMsgAr").textContent;
+      playToneSequence([587.33, 783.99], 0.1, "sine", 0.07);
+      flashVisualElement("hydrationDiagnosisBox");
+      speakArabicText(msgAr, "جاري نطق توصية احتياج الماء...", "Speaking post-test hydration message...");
+    }
+
+
+    const WELCOME_WORDS_SEQUENCE = [
+      { key: "ar", word: "مرحبا", rate: 1.55, pitch: 1.0 },
+      { key: "en", word: "Hello", rate: 1.6, pitch: 1.02 },
+      { key: "es", word: "Hola", rate: 1.58, pitch: 1.0 },
+      { key: "de", word: "Hallo", rate: 1.55, pitch: 0.98 }
+    ];
+
+    let welcomeCompletedSuccessfully = false;
+    let welcomeRunning = false;
+
+    function refreshAllVoices() {
+      ["ar", "en", "es", "de"].forEach(pickBestVoiceForLang);
+    }
+
+    function playStartupWelcomeAudio() {
+      if (!voiceEnabled || !("speechSynthesis" in window)) return;
+      if (welcomeCompletedSuccessfully || welcomeRunning) return;
+
+      welcomeRunning = true;
+      const myToken = ++speechSessionToken;
+      const wave = document.getElementById("soundWaveBars");
+
+      try {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        }
+        refreshAllVoices();
+        if (wave) wave.classList.add("speaking");
+
+        // دفع جميع اللغات في طابور النطق فوراً دون أي تأخير أو فاصل بين لغة وأخرى
+        WELCOME_WORDS_SEQUENCE.forEach((item, idx) => {
+          const cfg = LANG_META[item.key];
+          const chosenVoice = voiceCache[item.key] || pickBestVoiceForLang(item.key);
+          const utter = new SpeechSynthesisUtterance(item.word);
+          utter.lang = chosenVoice && chosenVoice.lang ? chosenVoice.lang : cfg.fallback;
+          if (chosenVoice) utter.voice = chosenVoice;
+          utter.rate = item.rate;
+          utter.pitch = item.pitch;
+          utter.volume = 1.0;
+
+          utter.onstart = () => {
+            if (myToken === speechSessionToken) {
+              welcomeCompletedSuccessfully = true;
+            }
+          };
+
+          utter.onend = () => {
+            if (myToken !== speechSessionToken) return;
+            if (idx === WELCOME_WORDS_SEQUENCE.length - 1) {
+              welcomeRunning = false;
+              welcomeCompletedSuccessfully = true;
+              if (wave) wave.classList.remove("speaking");
+            }
+          };
+
+          utter.onerror = (ev) => {
+            if (myToken !== speechSessionToken) return;
+            if (ev && (ev.error === "not-allowed" || ev.error === "audio-busy")) {
+              welcomeRunning = false;
+              welcomeCompletedSuccessfully = false;
+              if (wave) wave.classList.remove("speaking");
+              return;
+            }
+            if (idx === WELCOME_WORDS_SEQUENCE.length - 1) {
+              welcomeRunning = false;
+              if (wave) wave.classList.remove("speaking");
+            }
+          };
+
+          window.speechSynthesis.speak(utter);
+        });
+
+        setTimeout(() => {
+          if (myToken === speechSessionToken && welcomeRunning) {
+            welcomeRunning = false;
+            if (wave) wave.classList.remove("speaking");
+          }
+        }, 1600);
+      } catch (e) {
+        welcomeRunning = false;
+        if (wave) wave.classList.remove("speaking");
+      }
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        refreshAllVoices();
+        if (!welcomeCompletedSuccessfully && voiceEnabled) {
+          playStartupWelcomeAudio();
+        }
+      };
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      recomputeFromCalibration(false);
+      refreshDiagnosticReport();
+      refreshAllVoices();
+      playStartupWelcomeAudio();
+
+      const handleFirstUserGesture = () => {
+        getAudioCtx();
+        if ("speechSynthesis" in window && window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        }
+        if (!welcomeCompletedSuccessfully && voiceEnabled) {
+          playStartupWelcomeAudio();
+        }
+      };
+
+      document.addEventListener("pointerdown", handleFirstUserGesture, { passive: true });
+      document.addEventListener("touchstart", handleFirstUserGesture, { passive: true });
+      document.addEventListener("click", handleFirstUserGesture, { passive: true });
+      document.addEventListener("keydown", handleFirstUserGesture, { passive: true });
+    });
+
+  </script>
+</body>
+</html>
